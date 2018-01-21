@@ -64,8 +64,14 @@
             this.txtBxComp = new System.Windows.Forms.TextBox();
             this.txtBxEmail = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnGetImage = new System.Windows.Forms.Button();
+            this.openImageFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -223,7 +229,7 @@
             this.txtBxNot.Location = new System.Drawing.Point(659, 137);
             this.txtBxNot.Multiline = true;
             this.txtBxNot.Name = "txtBxNot";
-            this.txtBxNot.Size = new System.Drawing.Size(343, 177);
+            this.txtBxNot.Size = new System.Drawing.Size(343, 83);
             this.txtBxNot.TabIndex = 19;
             // 
             // txtBxState
@@ -272,14 +278,14 @@
             "First Name",
             "Last Name",
             "Company"});
-            this.cmbBxSrch.Location = new System.Drawing.Point(508, 339);
+            this.cmbBxSrch.Location = new System.Drawing.Point(53, 432);
             this.cmbBxSrch.Name = "cmbBxSrch";
             this.cmbBxSrch.Size = new System.Drawing.Size(121, 23);
             this.cmbBxSrch.TabIndex = 25;
             // 
             // btnSrch
             // 
-            this.btnSrch.Location = new System.Drawing.Point(646, 339);
+            this.btnSrch.Location = new System.Drawing.Point(191, 432);
             this.btnSrch.Name = "btnSrch";
             this.btnSrch.Size = new System.Drawing.Size(75, 23);
             this.btnSrch.TabIndex = 26;
@@ -289,7 +295,7 @@
             // 
             // btnEdt
             // 
-            this.btnEdt.Location = new System.Drawing.Point(739, 339);
+            this.btnEdt.Location = new System.Drawing.Point(272, 432);
             this.btnEdt.Name = "btnEdt";
             this.btnEdt.Size = new System.Drawing.Size(75, 23);
             this.btnEdt.TabIndex = 27;
@@ -298,7 +304,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(835, 339);
+            this.btnAdd.Location = new System.Drawing.Point(353, 432);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 28;
@@ -308,7 +314,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(928, 339);
+            this.btnDel.Location = new System.Drawing.Point(434, 432);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 29;
@@ -320,7 +326,7 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(53, 378);
+            this.dataGridView1.Location = new System.Drawing.Point(54, 471);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(950, 188);
@@ -359,12 +365,49 @@
             this.label14.TabIndex = 33;
             this.label14.Text = "Email";
             // 
-            // frmSearch
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(659, 235);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(225, 225);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
+            // 
+            // btnGetImage
+            // 
+            this.btnGetImage.Location = new System.Drawing.Point(556, 235);
+            this.btnGetImage.Name = "btnGetImage";
+            this.btnGetImage.Size = new System.Drawing.Size(88, 42);
+            this.btnGetImage.TabIndex = 36;
+            this.btnGetImage.Text = "Get Picture";
+            this.btnGetImage.UseVisualStyleBackColor = true;
+            this.btnGetImage.Click += new System.EventHandler(this.btnGetImage_Click);
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Location = new System.Drawing.Point(515, 432);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnExcel.TabIndex = 37;
+            this.btnExcel.Text = "Excel";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Excel Files(*.xlsx)|*.xlsx";
+            // 
+            // frmSearchAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGreen;
-            this.ClientSize = new System.Drawing.Size(1028, 578);
+            this.ClientSize = new System.Drawing.Size(1028, 671);
+            this.Controls.Add(this.btnExcel);
+            this.Controls.Add(this.btnGetImage);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBxEmail);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtBxComp);
@@ -401,12 +444,13 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "frmSearch";
+            this.Name = "frmSearchAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shipped Products Management System";
             this.Load += new System.EventHandler(this.frmLoggedIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -449,5 +493,10 @@
         private System.Windows.Forms.TextBox txtBxComp;
         private System.Windows.Forms.TextBox txtBxEmail;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnGetImage;
+        private System.Windows.Forms.OpenFileDialog openImageFileDialog;
+        private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
