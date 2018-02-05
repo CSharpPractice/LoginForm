@@ -23,11 +23,223 @@ namespace LoginForm
         SqlCommandBuilder cmdBuilder;
         SqlConnection conn;
 
+        public void EnableProcessGrpBx(bool enable)
+        {
+            this.grpBoxProcessData.Enabled = enable;
+        }
+
+        public void EnableProductionDataGrpBx(bool enable)
+        {
+            this.grpBoxShippingData.Enabled = enable;
+        }
+
+        public void initial_UI_Setting()
+        {
+            EnableProcessGrpBx(false);
+            EnableProductionDataGrpBx(false);
+            this.cmbModel.Items.AddRange(new string[] {"TB-3033C", "TB-3093C", "TB-3103C" });
+            this.cmbCategory.Items.AddRange(new string[] { "공정 Data", "Production Data"});
+         
+        }
+
+        public void grpBox_ProcessData_Initial_UI()
+        {
+            this.cmbSubCategory.Enabled = true;
+            this.cmbPathSelection.Enabled = false;
+            this.cmbErrorCategory.Enabled = false;
+            this.dTPickerBurnStat.Enabled = false;
+            this.dTPickerBurnStop.Enabled = false;
+            this.cmbBurningYesNo.Enabled = false;
+            this.cmbTestItems.Enabled = false;
+            this.txtBxDetails.Enabled = false;
+            this.txtBxDCMSerial.Enabled = false;
+            this.txtBxGiftBxSerial.Enabled = false;
+            this.txtBxCartonBoxDCMSerial.Enabled = false;
+            this.dateTimePickerProductionDate.Enabled = false;
+            this.lblBurningTime.Hide();
+            this.grpBoxFixRepairList.Enabled = false;
+
+            this.txtBxSerialNo.Clear();
+            this.cmbSubCategory.Text = "";
+            this.cmbPathSelection.Text = "";
+            this.cmbErrorCategory.Text = "";
+            this.txtBxDetails.Text = "";
+            this.cmbBurningYesNo.Text = "";
+            this.cmbTestItems.Text = "";
+            this.txtBxDCMSerial.Text = "";
+            this.txtBxGiftBxSerial.Text = "";
+            this.txtBxCartonBoxDCMSerial.Text = "";
+            //if (this.cmbPassFail.Text == "Pass"
+        }
+        public void grpBox_Shipping_Data()
+        {
+            this.cmbProductionDataSelection.Items.Clear();
+            this.cmbProductionDataSelection.Items.AddRange(new string[] {"공정 Data","출하 Data"});
+        }
+        
+        private void btnFail_Click(object sender, EventArgs e)
+        {
+            this.cmbSubCategory.Enabled = true;
+        }
+
+        public void grpBox_Soldering_UI()
+        {
+            //this.cmbSubCategory.Enabled = true;
+            this.txtBxDetails.Enabled = true;
+        }
+
+        public void grpBox_Tuning_UI()
+        {
+           
+            this.txtBxDetails.Enabled = true;
+            this.cmbPathSelection.Enabled = true;
+            this.cmbErrorCategory.Enabled = true;
+            this.cmbErrorCategory.Items.Clear();
+            this.cmbErrorCategory.Items.AddRange(new string[] {"Gain", "VSWR", "etc" });
+            this.txtBxDetails.Enabled = true;
+        }
+
+        public void partial_integ_UI()
+        {
+            this.cmbErrorCategory.Enabled = true;
+            this.cmbErrorCategory.Items.Clear();
+            this.cmbErrorCategory.Items.AddRange(new string[] { "etc" });
+            this.txtBxDetails.Enabled = true;
+        }
+
+        public void table_fail_UI()
+        {
+            this.txtBxDetails.Enabled = true;
+            this.cmbPathSelection.Enabled = true;
+
+        }
+
+        public void Burning_UI()
+        {
+            this.dTPickerBurnStat.Enabled = true;
+            this.dTPickerBurnStop.Enabled = true;
+            this.cmbBurningYesNo.Enabled = true;
+            this.lblBurningTime.Enabled = true;
+        }
+
+        public void ATS_ICS_UI(int ATSICS)
+        {
+            this.cmbTestItems.Enabled = true;
+            this.txtBxDetails.Enabled = true;
+        }
+        public void Full_Integ_UI()
+        {
+            this.cmbErrorCategory.Enabled = true;
+            this.txtBxDetails.Enabled = true;
+        }
+
+        public void packaing_UI()
+        {
+            this.txtBxDCMSerial.Enabled = true;
+            this.txtBxGiftBxSerial.Enabled = true;
+            this.txtBxCartonBoxDCMSerial.Enabled = true;
+
+        }
+
+        public void Shipping_UI()
+        {
+            this.txtBxCartonBoxDCMSerial.Enabled = true;
+            this.dateTimePickerProductionDate.Enabled = true;
+        }
+
+        public void grpBoxFix_Repair_UI()
+        {
+            this.grpBoxFixRepairList.Enabled = true;
+            this.dateTimePickerProductionDate.Enabled = true;
+        }
+
+        private void cmbSubCategory_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (this.cmbSubCategory.Text == "수삽")
+            {
+                grpBox_ProcessData_Initial_UI();
+                grpBox_Soldering_UI();
+            }
+            else if (this.cmbSubCategory.Text == "Tuning")
+            {
+                grpBox_ProcessData_Initial_UI();
+                grpBox_Tuning_UI();
+            }
+            else if (this.cmbSubCategory.Text == "반조립")
+            {
+                grpBox_ProcessData_Initial_UI();
+                partial_integ_UI();
+            }
+            else if (this.cmbSubCategory.Text == "Burning")
+            {
+                grpBox_ProcessData_Initial_UI();
+                Burning_UI();
+            }
+            else if (this.cmbSubCategory.Text == "ATS1")
+            {
+                grpBox_ProcessData_Initial_UI();
+                ATS_ICS_UI(1);
+            }
+            else if (this.cmbSubCategory.Text == "ATS2")
+            {
+                grpBox_ProcessData_Initial_UI();
+                ATS_ICS_UI(2);
+            }
+            else if (this.cmbSubCategory.Text == "ICS1")
+            {
+                grpBox_ProcessData_Initial_UI();
+                ATS_ICS_UI(3);
+            }
+            else if (this.cmbSubCategory.Text == "ICS2")
+            {
+                grpBox_ProcessData_Initial_UI();
+                ATS_ICS_UI(4);
+            }
+            else if (this.cmbSubCategory.Text == "완조립")
+            {
+                grpBox_ProcessData_Initial_UI();
+                Full_Integ_UI();
+            }
+            else if (this.cmbSubCategory.Text == "포장")
+            {
+                grpBox_ProcessData_Initial_UI();
+                packaing_UI();
+            }
+            else if (this.cmbSubCategory.Text == "출하")
+            {
+                grpBox_ProcessData_Initial_UI();
+                Shipping_UI();
+            }
+            else if (this.cmbSubCategory.Text == "수리")
+            {
+                grpBox_ProcessData_Initial_UI();
+                grpBoxFix_Repair_UI();
+            }
+        }
+        private void cmbCategory_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (this.cmbCategory.Text == "공정 Data")
+            {
+                EnableProcessGrpBx(true);
+                EnableProductionDataGrpBx(false);
+                grpBox_ProcessData_Initial_UI();
+            }
+            else if (this.cmbCategory.Text == "Production Data")
+            {
+                EnableProcessGrpBx(false);
+                EnableProductionDataGrpBx(true);
+                grpBox_Shipping_Data();
+            }
+        }
+
         string selectionStatement = "select * from BizContacts";
 
         public frmSearchAdmin()
         {
             InitializeComponent();
+            
+            initial_UI_Setting();
+
         }
 
         private void frmLoggedIn_Load(object sender, EventArgs e)
@@ -225,5 +437,7 @@ namespace LoginForm
             }
              
         }
+
+       
     }
 }
