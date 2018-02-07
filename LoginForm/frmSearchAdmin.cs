@@ -17,6 +17,12 @@ namespace LoginForm
     {
 
         public string connString = @"Data Source=DESKTOP-0V3BOG8\SQLEXPRESS;Initial Catalog=AddressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public string subCategory = "";
+
+        int detailedTxtBxYCoordi = 0, detailedTxtBxLbl = 0, cmbErrorCategXCoordi = 0, lblErrorClassificationXCoordi = 0, cmbPathSelcXCoord = 0, lblPointErrorXCoord=0;
+
+        //System.Drawing.Point detailedTxBxCoordi, ;
+        
 
         SqlDataAdapter dataAdapter;
         System.Data.DataTable table;
@@ -26,40 +32,84 @@ namespace LoginForm
         public void EnableProcessGrpBx(bool enable)
         {
             this.grpBoxProcessData.Enabled = enable;
+            if (enable)
+            {
+                this.grpBoxProcessData.Show();
+            }
+            else
+            {
+                this.grpBoxProcessData.Hide();
+            }
         }
 
         public void EnableProductionDataGrpBx(bool enable)
         {
-            this.grpBoxShippingData.Enabled = enable;
+            this.grpSerialMatching.Enabled = enable;
+            if (enable)
+            {
+                this.grpSerialMatching.Show();
+            }
+            else
+            {
+                this.grpSerialMatching.Hide();
+            }
+        }
+
+        public void EnableDataSearchGrpBox(bool enable)
+        {
+            this.grpBoxDataSearch.Enabled = enable;
+            if (enable)
+            {
+                this.grpBoxDataSearch.Show();
+            }
+            else
+            {
+                this.grpBoxDataSearch.Hide();
+            }
         }
 
         public void initial_UI_Setting()
         {
             EnableProcessGrpBx(false);
             EnableProductionDataGrpBx(false);
+            EnableDataSearchGrpBox(false);
             this.cmbModel.Items.AddRange(new string[] {"TB-3033C", "TB-3093C", "TB-3103C" });
-            this.cmbCategory.Items.AddRange(new string[] { "공정 Data", "Production Data"});
+            this.cmbCategory.Items.AddRange(new string[] { "공정 Data", "Serial Matching", "Data Search"});
          
         }
 
         public void grpBox_ProcessData_Initial_UI()
         {
             this.cmbSubCategory.Enabled = true;
-            this.cmbPathSelection.Enabled = false;
-            this.cmbErrorCategory.Enabled = false;
-            this.dTPickerBurnStat.Enabled = false;
-            this.dTPickerBurnStop.Enabled = false;
-            this.cmbBurningYesNo.Enabled = false;
-            this.cmbTestItems.Enabled = false;
-            this.txtBxDetails.Enabled = false;
-            this.txtBxDCMSerial.Enabled = false;
-            this.txtBxGiftBxSerial.Enabled = false;
-            this.txtBxCartonBoxDCMSerial.Enabled = false;
-            this.dateTimePickerProductionDate.Enabled = false;
+            this.cmbPathSelection.Visible = false;
+            this.cmbErrorCategory.Visible = false;
+            this.dTPickerBurnStat.Visible = false;
+            this.dTPickerBurnStop.Visible = false;
+            this.cmbBurningYesNo.Visible = false;
+            this.cmbTestItems.Visible = false;
+            this.txtBxDetails.Visible = false;
+            this.txtBxDCMSerial.Visible = false;
+            this.txtBxGiftBxSerial.Visible = false;
+            this.txtBxCartonBoxDCMSerial.Visible = false;
+            this.dateTimePickerProductionDate.Visible = false;
             this.lblBurningTime.Hide();
-            this.grpBoxFixRepairList.Enabled = false;
+            this.grpBoxFixRepairList.Visible = false;
 
-            this.txtBxSerialNo.Clear();
+            this.lblPointOfError.Visible = false;
+            this.lblErrorClassification.Visible = false;
+            this.lblStart.Visible = false;
+            this.lblStop.Visible = false;
+            this.lblBurningTime.Visible = false;
+            this.lblBurningYesNo.Visible = false;
+            this.lblTestItem.Visible = false;
+            this.lblDetails.Visible = false;
+            this.lblCartonBxDCMSerial.Visible = false;
+            this.lblGiftBoxSerial.Visible = false;
+            this.lblDCMSerial.Visible = false;
+            this.lblProductionDate.Visible = false;
+            
+
+            //this.txtBxSerialNo.Clear();
             this.cmbSubCategory.Text = "";
             this.cmbPathSelection.Text = "";
             this.cmbErrorCategory.Text = "";
@@ -79,141 +129,292 @@ namespace LoginForm
         
         private void btnFail_Click(object sender, EventArgs e)
         {
-            this.cmbSubCategory.Enabled = true;
+            if (subCategory == "수삽")
+            {
+                grpBox_ProcessData_Initial_UI();
+                grpBox_Soldering_UI();
+            }
+            else if (subCategory == "Tuning")
+            {
+               // subCategory = "Tuning";
+                grpBox_ProcessData_Initial_UI();
+                grpBox_Tuning_UI();
+            }
+            else if (subCategory == "반조립")
+            {
+                //subCategory = "반조립";
+                grpBox_ProcessData_Initial_UI();
+                partial_integ_UI();
+            }
+            else if (subCategory == "Table")
+            {
+                //subCategory = "반조립";
+                grpBox_ProcessData_Initial_UI();
+                table_fail_UI();
+            }
+            else if (subCategory == "Burning")
+            {
+                //subCategory = "Burning";
+                grpBox_ProcessData_Initial_UI();
+                Burning_UI();
+            }
+            else if (subCategory == "ATS1")
+            {
+               // subCategory = "ATS1"
+                grpBox_ProcessData_Initial_UI();
+                ATS_ICS_UI(1);
+            }
+            else if (subCategory == "ATS2")
+            {
+               // subCategory = "ATS2";
+                grpBox_ProcessData_Initial_UI();
+                ATS_ICS_UI(2);
+            }
+            else if (subCategory == "ICS1")
+            {
+               // subCategory = "ICS1";
+                grpBox_ProcessData_Initial_UI();
+                ATS_ICS_UI(3);
+            }
+            else if (subCategory == "ICS2")
+            {
+               // subCategory = "ICS2";
+                grpBox_ProcessData_Initial_UI();
+                ATS_ICS_UI(4);
+            }
+            else if (subCategory == "완조립")
+            {
+                //subCategory = "완조립";
+                grpBox_ProcessData_Initial_UI();
+                Full_Integ_UI();
+            }
+            else if (subCategory == "포장")
+            {
+               // subCategory = "포장";
+                grpBox_ProcessData_Initial_UI();
+                packaing_UI();
+            }
+            else if (subCategory == "출하")
+            {
+               // cmbSubCategory = "출하";
+                grpBox_ProcessData_Initial_UI();
+                Shipping_UI();
+            }
+            else if (subCategory == "수리")
+            {
+                //subCategory = "수리";
+                grpBox_ProcessData_Initial_UI();
+                grpBoxFix_Repair_UI();
+            }
         }
 
         public void grpBox_Soldering_UI()
         {
             //this.cmbSubCategory.Enabled = true;
-            this.txtBxDetails.Enabled = true;
+            this.txtBxDetails.Visible = true;
+            this.lblDetails.Visible = true;
+            this.lblDetails.Top = this.lblPointOfError.Location.Y;
+            this.txtBxDetails.Top = this.cmbPathSelection.Location.Y;
         }
 
         public void grpBox_Tuning_UI()
         {
            
-            this.txtBxDetails.Enabled = true;
-            this.cmbPathSelection.Enabled = true;
-            this.cmbErrorCategory.Enabled = true;
+            this.txtBxDetails.Visible = true;
+            this.lblDetails.Visible = true;
+
+            this.txtBxDetails.Top = detailedTxtBxYCoordi;
+            this.lblDetails.Top = detailedTxtBxLbl;
+
+            this.cmbPathSelection.Visible = true;
+            this.lblPointOfError.Visible = true;
+            this.cmbErrorCategory.Visible = true;
+            this.lblErrorClassification.Visible = true;
+
+            this.cmbErrorCategory.Left = cmbErrorCategXCoordi;
+            this.lblErrorClassification.Left = lblErrorClassificationXCoordi;
+
             this.cmbErrorCategory.Items.Clear();
             this.cmbErrorCategory.Items.AddRange(new string[] {"Gain", "VSWR", "etc" });
-            this.txtBxDetails.Enabled = true;
+           // this.cmbErrorCategory.Visible = true;
         }
 
         public void partial_integ_UI()
         {
-            this.cmbErrorCategory.Enabled = true;
+            this.cmbErrorCategory.Visible = true;
+            this.lblErrorClassification.Visible = true;
+
+            this.cmbErrorCategory.Left = this.cmbPathSelection.Location.X;
+            this.lblErrorClassification.Left = this.lblPointOfError.Location.X+20;
+
             this.cmbErrorCategory.Items.Clear();
             this.cmbErrorCategory.Items.AddRange(new string[] { "etc" });
-            this.txtBxDetails.Enabled = true;
+            this.lblDetails.Visible = true;
+            //this.lblBurningYesNo.Visible = true;
+            this.txtBxDetails.Visible = true;
+            this.lblDetails.Visible = true;
         }
 
         public void table_fail_UI()
         {
-            this.txtBxDetails.Enabled = true;
-            this.cmbPathSelection.Enabled = true;
+            this.txtBxDetails.Visible = true;
+            this.lblDetails.Visible = true;
+            this.cmbPathSelection.Visible = true;
+            this.lblPointOfError.Visible = true;
+
+            this.cmbErrorCategory.Left = cmbErrorCategXCoordi;
+            this.lblErrorClassification.Left = lblErrorClassificationXCoordi;
 
         }
 
         public void Burning_UI()
         {
-            this.dTPickerBurnStat.Enabled = true;
-            this.dTPickerBurnStop.Enabled = true;
-            this.cmbBurningYesNo.Enabled = true;
-            this.lblBurningTime.Enabled = true;
+            this.dTPickerBurnStat.Visible = true;
+            this.lblStart.Visible = true;
+            this.dTPickerBurnStop.Visible = true;
+            this.lblStop.Visible = true;
+            this.cmbBurningYesNo.Visible = true;
+            this.lblBurningYesNo.Visible = true;
+            this.lblBurningTime.Visible = true;
         }
 
         public void ATS_ICS_UI(int ATSICS)
         {
-            this.cmbTestItems.Enabled = true;
-            this.txtBxDetails.Enabled = true;
+            this.cmbTestItems.Visible = true;
+            this.lblTestItem.Visible = true;
+            this.txtBxDetails.Visible = true;
+            this.lblDetails.Visible = true;
+
+            this.lblTestItem.Top = this.lblBurningYesNo.Location.Y;
+            this.cmbTestItems.Top = this.cmbBurningYesNo.Location.Y;
         }
         public void Full_Integ_UI()
         {
-            this.cmbErrorCategory.Enabled = true;
-            this.txtBxDetails.Enabled = true;
+            this.cmbErrorCategory.Visible = true;
+            this.lblErrorClassification.Visible = true;
+            this.txtBxDetails.Visible = true;
+            this.lblDetails.Visible = true;
+
+            this.lblErrorClassification.Left = lblPointErrorXCoord+20;
+            this.cmbErrorCategory.Left = cmbPathSelcXCoord;
         }
 
         public void packaing_UI()
         {
-            this.txtBxDCMSerial.Enabled = true;
-            this.txtBxGiftBxSerial.Enabled = true;
-            this.txtBxCartonBoxDCMSerial.Enabled = true;
+            this.txtBxDCMSerial.Visible = true;
+            this.lblCartonBxDCMSerial.Visible = true;
+            this.txtBxGiftBxSerial.Visible = true;
+            this.lblGiftBoxSerial.Visible = true;
+            this.txtBxCartonBoxDCMSerial.Visible = true;
+            this.lblDCMSerial.Visible = true;
+
+            this.lblDCMSerial.Top = this.lblProductionDate.Location.Y;
+            this.lblCartonBxDCMSerial.Top = this.lblProductionDate.Location.Y;
+            this.lblGiftBoxSerial.Top = this.lblProductionDate.Location.Y;
+
+            this.txtBxDCMSerial.Top = this.dateTimePickerProductionDate.Location.Y;
+            this.txtBxGiftBxSerial.Top = this.dateTimePickerProductionDate.Location.Y;
+            this.txtBxCartonBoxDCMSerial.Top = this.dateTimePickerProductionDate.Location.Y;
 
         }
 
         public void Shipping_UI()
         {
-            this.txtBxCartonBoxDCMSerial.Enabled = true;
-            this.dateTimePickerProductionDate.Enabled = true;
+            this.txtBxCartonBoxDCMSerial.Visible = true;
+            this.lblCartonBxDCMSerial.Visible = true;
+            this.dateTimePickerProductionDate.Visible = true;
+            this.lblProductionDate.Visible = true ;
+
+            this.lblCartonBxDCMSerial.Top = this.lblProductionDate.Location.Y;
+            this.txtBxCartonBoxDCMSerial.Top = this.dateTimePickerProductionDate.Location.Y;
         }
 
         public void grpBoxFix_Repair_UI()
         {
-            this.grpBoxFixRepairList.Enabled = true;
-            this.dateTimePickerProductionDate.Enabled = true;
+            this.grpBoxFixRepairList.Visible = true;
+            this.lblProductionDate.Visible = true;
+            this.dateTimePickerProductionDate.Visible = true;
         }
 
         private void cmbSubCategory_SelectedValueChanged(object sender, EventArgs e)
         {
             if (this.cmbSubCategory.Text == "수삽")
             {
+                subCategory = "수삽";
                 grpBox_ProcessData_Initial_UI();
-                grpBox_Soldering_UI();
+                //grpBox_Soldering_UI();
             }
             else if (this.cmbSubCategory.Text == "Tuning")
             {
+                subCategory = "Tuning";
                 grpBox_ProcessData_Initial_UI();
-                grpBox_Tuning_UI();
+                //grpBox_Tuning_UI();
+            }
+            else if (this.cmbSubCategory.Text == "Table")
+            {
+                subCategory = "Table";
+                grpBox_ProcessData_Initial_UI();
+                //grpBox_Tuning_UI();
             }
             else if (this.cmbSubCategory.Text == "반조립")
             {
+                subCategory = "반조립";
                 grpBox_ProcessData_Initial_UI();
-                partial_integ_UI();
+                //partial_integ_UI();
             }
             else if (this.cmbSubCategory.Text == "Burning")
             {
+                subCategory = "Burning";
                 grpBox_ProcessData_Initial_UI();
-                Burning_UI();
+                //Burning_UI();
             }
             else if (this.cmbSubCategory.Text == "ATS1")
             {
+                subCategory = "ATS1";
                 grpBox_ProcessData_Initial_UI();
-                ATS_ICS_UI(1);
+                //ATS_ICS_UI(1);
             }
             else if (this.cmbSubCategory.Text == "ATS2")
             {
+                subCategory = "ATS2";
                 grpBox_ProcessData_Initial_UI();
-                ATS_ICS_UI(2);
+                //ATS_ICS_UI(2);
             }
             else if (this.cmbSubCategory.Text == "ICS1")
             {
+                subCategory = "ICS1";
                 grpBox_ProcessData_Initial_UI();
-                ATS_ICS_UI(3);
+                //ATS_ICS_UI(3);
             }
             else if (this.cmbSubCategory.Text == "ICS2")
             {
+                subCategory = "ICS2";
                 grpBox_ProcessData_Initial_UI();
-                ATS_ICS_UI(4);
+                //ATS_ICS_UI(4);
             }
             else if (this.cmbSubCategory.Text == "완조립")
             {
+                subCategory = "완조립";
                 grpBox_ProcessData_Initial_UI();
-                Full_Integ_UI();
+                //Full_Integ_UI();
             }
             else if (this.cmbSubCategory.Text == "포장")
             {
+                subCategory = "포장";
                 grpBox_ProcessData_Initial_UI();
-                packaing_UI();
+                //packaing_UI();
             }
             else if (this.cmbSubCategory.Text == "출하")
             {
+                subCategory = "출하";
                 grpBox_ProcessData_Initial_UI();
-                Shipping_UI();
+                //Shipping_UI();
             }
             else if (this.cmbSubCategory.Text == "수리")
             {
+                subCategory = "수리";
                 grpBox_ProcessData_Initial_UI();
-                grpBoxFix_Repair_UI();
+                //grpBoxFix_Repair_UI();
             }
         }
         private void cmbCategory_SelectedValueChanged(object sender, EventArgs e)
@@ -222,13 +423,21 @@ namespace LoginForm
             {
                 EnableProcessGrpBx(true);
                 EnableProductionDataGrpBx(false);
+                EnableDataSearchGrpBox(false);
                 grpBox_ProcessData_Initial_UI();
             }
-            else if (this.cmbCategory.Text == "Production Data")
+            else if (this.cmbCategory.Text == "Serial Matching")
             {
                 EnableProcessGrpBx(false);
                 EnableProductionDataGrpBx(true);
+                EnableDataSearchGrpBox(false);
                 grpBox_Shipping_Data();
+            }
+            else if (this.cmbCategory.Text == "Data Search")
+            {
+                EnableProcessGrpBx(false);
+                EnableProductionDataGrpBx(false);
+                EnableDataSearchGrpBox(true);
             }
         }
 
@@ -239,7 +448,13 @@ namespace LoginForm
             InitializeComponent();
             
             initial_UI_Setting();
+            detailedTxtBxYCoordi = txtBxDetails.Location.Y;
+            detailedTxtBxLbl = lblDetails.Location.Y;
+            cmbErrorCategXCoordi = cmbErrorCategory.Location.X;
+            lblErrorClassificationXCoordi = lblErrorClassification.Location.X;
 
+            cmbPathSelcXCoord = this.cmbPathSelection.Location.X;
+            lblPointErrorXCoord = this.lblPointOfError.Location.X;
         }
 
         private void frmLoggedIn_Load(object sender, EventArgs e)

@@ -76,6 +76,31 @@
             this.cmbSubCategory = new System.Windows.Forms.ComboBox();
             this.lblProcessCateg = new System.Windows.Forms.Label();
             this.grpBoxProcessData = new System.Windows.Forms.GroupBox();
+            this.grpBoxFixRepairList = new System.Windows.Forms.GroupBox();
+            this.lblRepairLstTableFail = new System.Windows.Forms.Label();
+            this.lblRepairLstFullInteg = new System.Windows.Forms.Label();
+            this.lblRepairLstICS2 = new System.Windows.Forms.Label();
+            this.lblRepairLstICS1 = new System.Windows.Forms.Label();
+            this.lblRepairLstATS2 = new System.Windows.Forms.Label();
+            this.lblRepairATS1 = new System.Windows.Forms.Label();
+            this.lblRepairLstPartialInteg = new System.Windows.Forms.Label();
+            this.lblRepairLstTuning = new System.Windows.Forms.Label();
+            this.lblRepairLstSoldering = new System.Windows.Forms.Label();
+            this.lblBurningTime = new System.Windows.Forms.Label();
+            this.btnFail = new System.Windows.Forms.Button();
+            this.btnTestPass = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dateTimePickerProductionDate = new System.Windows.Forms.DateTimePicker();
+            this.lblProductionDate = new System.Windows.Forms.Label();
+            this.txtBxCartonBoxDCMSerial = new System.Windows.Forms.TextBox();
+            this.lblCartonBxDCMSerial = new System.Windows.Forms.Label();
+            this.txtBxGiftBxSerial = new System.Windows.Forms.TextBox();
+            this.lblGiftBoxSerial = new System.Windows.Forms.Label();
+            this.txtBxDCMSerial = new System.Windows.Forms.TextBox();
+            this.lblDCMSerial = new System.Windows.Forms.Label();
+            this.cmbTestItems = new System.Windows.Forms.ComboBox();
+            this.lblTestItem = new System.Windows.Forms.Label();
             this.cmbBurningYesNo = new System.Windows.Forms.ComboBox();
             this.lblBurningYesNo = new System.Windows.Forms.Label();
             this.txtBxSerialNo = new System.Windows.Forms.TextBox();
@@ -91,52 +116,29 @@
             this.cmbPathSelection = new System.Windows.Forms.ComboBox();
             this.lblPointOfError = new System.Windows.Forms.Label();
             this.lblTestResult = new System.Windows.Forms.Label();
-            this.cmbTestItems = new System.Windows.Forms.ComboBox();
-            this.lblTestItem = new System.Windows.Forms.Label();
-            this.txtBxDCMSerial = new System.Windows.Forms.TextBox();
-            this.lblDCMSerial = new System.Windows.Forms.Label();
-            this.txtBxGiftBxSerial = new System.Windows.Forms.TextBox();
-            this.lblGiftBoxSerial = new System.Windows.Forms.Label();
-            this.txtBxCartonBoxDCMSerial = new System.Windows.Forms.TextBox();
-            this.lblCartonBxDCMSerial = new System.Windows.Forms.Label();
-            this.lblProductionDate = new System.Windows.Forms.Label();
-            this.dateTimePickerProductionDate = new System.Windows.Forms.DateTimePicker();
-            this.grpBoxShippingData = new System.Windows.Forms.GroupBox();
-            this.cmbProductionDataSelection = new System.Windows.Forms.ComboBox();
-            this.lblProductDataTypeSelection = new System.Windows.Forms.Label();
+            this.grpSerialMatching = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.button4 = new System.Windows.Forms.Button();
+            this.txtBxProductionInputDCMSerialNo = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblProductionDataDCMSerialNo = new System.Windows.Forms.Label();
+            this.txtBxProductAdapterSerialNo = new System.Windows.Forms.TextBox();
+            this.lblProductAdapterSerialNo = new System.Windows.Forms.Label();
             this.txtBxProductModemSerialNo = new System.Windows.Forms.TextBox();
             this.lblProductionModemSerialNo = new System.Windows.Forms.Label();
             this.txtBxProductCSSerialNo = new System.Windows.Forms.TextBox();
             this.lblProductCSserialNo = new System.Windows.Forms.Label();
-            this.txtBxProductionInputDCMSerialNo = new System.Windows.Forms.TextBox();
-            this.lblProductionDataDCMSerialNo = new System.Windows.Forms.Label();
-            this.txtBxProductAdapterSerialNo = new System.Windows.Forms.TextBox();
-            this.lblProductAdapterSerialNo = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.label15 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnTestPass = new System.Windows.Forms.Button();
-            this.btnFail = new System.Windows.Forms.Button();
-            this.lblBurningTime = new System.Windows.Forms.Label();
-            this.grpBoxFixRepairList = new System.Windows.Forms.GroupBox();
-            this.lblRepairLstTableFail = new System.Windows.Forms.Label();
-            this.lblRepairLstFullInteg = new System.Windows.Forms.Label();
-            this.lblRepairLstICS2 = new System.Windows.Forms.Label();
-            this.lblRepairLstICS1 = new System.Windows.Forms.Label();
-            this.lblRepairLstATS2 = new System.Windows.Forms.Label();
-            this.lblRepairATS1 = new System.Windows.Forms.Label();
-            this.lblRepairLstPartialInteg = new System.Windows.Forms.Label();
-            this.lblRepairLstTuning = new System.Windows.Forms.Label();
-            this.lblRepairLstSoldering = new System.Windows.Forms.Label();
+            this.cmbProductionDataSelection = new System.Windows.Forms.ComboBox();
+            this.lblProductDataTypeSelection = new System.Windows.Forms.Label();
+            this.grpBoxDataSearch = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpBoxProcessData.SuspendLayout();
-            this.grpBoxShippingData.SuspendLayout();
             this.grpBoxFixRepairList.SuspendLayout();
+            this.grpSerialMatching.SuspendLayout();
+            this.grpBoxDataSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -338,22 +340,22 @@
             // 
             // cmbBxSrch
             // 
-            this.cmbBxSrch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmbBxSrch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbBxSrch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBxSrch.FormattingEnabled = true;
             this.cmbBxSrch.Items.AddRange(new object[] {
             "First Name",
             "Last Name",
             "Company"});
-            this.cmbBxSrch.Location = new System.Drawing.Point(220, 659);
+            this.cmbBxSrch.Location = new System.Drawing.Point(8, 46);
             this.cmbBxSrch.Name = "cmbBxSrch";
             this.cmbBxSrch.Size = new System.Drawing.Size(121, 23);
             this.cmbBxSrch.TabIndex = 25;
             // 
             // btnSrch
             // 
-            this.btnSrch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSrch.Location = new System.Drawing.Point(357, 659);
+            this.btnSrch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSrch.Location = new System.Drawing.Point(145, 46);
             this.btnSrch.Name = "btnSrch";
             this.btnSrch.Size = new System.Drawing.Size(75, 23);
             this.btnSrch.TabIndex = 26;
@@ -363,8 +365,8 @@
             // 
             // btnEdt
             // 
-            this.btnEdt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEdt.Location = new System.Drawing.Point(438, 659);
+            this.btnEdt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEdt.Location = new System.Drawing.Point(226, 46);
             this.btnEdt.Name = "btnEdt";
             this.btnEdt.Size = new System.Drawing.Size(75, 23);
             this.btnEdt.TabIndex = 27;
@@ -373,8 +375,8 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAdd.Location = new System.Drawing.Point(519, 659);
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdd.Location = new System.Drawing.Point(307, 46);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 28;
@@ -384,8 +386,8 @@
             // 
             // btnDel
             // 
-            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDel.Location = new System.Drawing.Point(600, 659);
+            this.btnDel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDel.Location = new System.Drawing.Point(388, 46);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 29;
@@ -395,10 +397,10 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(220, 688);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 75);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(1149, 188);
@@ -459,8 +461,8 @@
             // 
             // btnExcel
             // 
-            this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExcel.Location = new System.Drawing.Point(681, 659);
+            this.btnExcel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnExcel.Location = new System.Drawing.Point(469, 46);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(75, 23);
             this.btnExcel.TabIndex = 37;
@@ -527,7 +529,7 @@
             "포장",
             "출하",
             "수리"});
-            this.cmbSubCategory.Location = new System.Drawing.Point(563, 31);
+            this.cmbSubCategory.Location = new System.Drawing.Point(339, 31);
             this.cmbSubCategory.Name = "cmbSubCategory";
             this.cmbSubCategory.Size = new System.Drawing.Size(121, 23);
             this.cmbSubCategory.TabIndex = 43;
@@ -536,7 +538,7 @@
             // lblProcessCateg
             // 
             this.lblProcessCateg.AutoSize = true;
-            this.lblProcessCateg.Location = new System.Drawing.Point(475, 34);
+            this.lblProcessCateg.Location = new System.Drawing.Point(251, 34);
             this.lblProcessCateg.Name = "lblProcessCateg";
             this.lblProcessCateg.Size = new System.Drawing.Size(82, 15);
             this.lblProcessCateg.TabIndex = 42;
@@ -584,423 +586,6 @@
             this.grpBoxProcessData.TabIndex = 67;
             this.grpBoxProcessData.TabStop = false;
             this.grpBoxProcessData.Text = "공정 Data 입력";
-            // 
-            // cmbBurningYesNo
-            // 
-            this.cmbBurningYesNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBurningYesNo.FormattingEnabled = true;
-            this.cmbBurningYesNo.Items.AddRange(new object[] {
-            "Pass",
-            "Fail"});
-            this.cmbBurningYesNo.Location = new System.Drawing.Point(563, 68);
-            this.cmbBurningYesNo.Name = "cmbBurningYesNo";
-            this.cmbBurningYesNo.Size = new System.Drawing.Size(121, 23);
-            this.cmbBurningYesNo.TabIndex = 82;
-            // 
-            // lblBurningYesNo
-            // 
-            this.lblBurningYesNo.AutoSize = true;
-            this.lblBurningYesNo.Location = new System.Drawing.Point(450, 74);
-            this.lblBurningYesNo.Name = "lblBurningYesNo";
-            this.lblBurningYesNo.Size = new System.Drawing.Size(107, 15);
-            this.lblBurningYesNo.TabIndex = 81;
-            this.lblBurningYesNo.Text = "Burning 유/무 :";
-            // 
-            // txtBxSerialNo
-            // 
-            this.txtBxSerialNo.Location = new System.Drawing.Point(118, 31);
-            this.txtBxSerialNo.Name = "txtBxSerialNo";
-            this.txtBxSerialNo.Size = new System.Drawing.Size(121, 25);
-            this.txtBxSerialNo.TabIndex = 80;
-            // 
-            // lblSerialNo
-            // 
-            this.lblSerialNo.AutoSize = true;
-            this.lblSerialNo.Location = new System.Drawing.Point(6, 34);
-            this.lblSerialNo.Name = "lblSerialNo";
-            this.lblSerialNo.Size = new System.Drawing.Size(106, 15);
-            this.lblSerialNo.TabIndex = 79;
-            this.lblSerialNo.Text = "CS Serial No. :";
-            // 
-            // cmbErrorCategory
-            // 
-            this.cmbErrorCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbErrorCategory.FormattingEnabled = true;
-            this.cmbErrorCategory.Items.AddRange(new object[] {
-            "Pass",
-            "Fail"});
-            this.cmbErrorCategory.Location = new System.Drawing.Point(1011, 31);
-            this.cmbErrorCategory.Name = "cmbErrorCategory";
-            this.cmbErrorCategory.Size = new System.Drawing.Size(121, 23);
-            this.cmbErrorCategory.TabIndex = 78;
-            // 
-            // lblErrorClassification
-            // 
-            this.lblErrorClassification.AutoSize = true;
-            this.lblErrorClassification.Location = new System.Drawing.Point(958, 34);
-            this.lblErrorClassification.Name = "lblErrorClassification";
-            this.lblErrorClassification.Size = new System.Drawing.Size(47, 15);
-            this.lblErrorClassification.TabIndex = 77;
-            this.lblErrorClassification.Text = "분류 :";
-            // 
-            // dTPickerBurnStop
-            // 
-            this.dTPickerBurnStop.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dTPickerBurnStop.Location = new System.Drawing.Point(113, 105);
-            this.dTPickerBurnStop.Name = "dTPickerBurnStop";
-            this.dTPickerBurnStop.Size = new System.Drawing.Size(200, 25);
-            this.dTPickerBurnStop.TabIndex = 76;
-            // 
-            // dTPickerBurnStat
-            // 
-            this.dTPickerBurnStat.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dTPickerBurnStat.Location = new System.Drawing.Point(112, 69);
-            this.dTPickerBurnStat.Name = "dTPickerBurnStat";
-            this.dTPickerBurnStat.Size = new System.Drawing.Size(200, 25);
-            this.dTPickerBurnStat.TabIndex = 75;
-            // 
-            // lblStop
-            // 
-            this.lblStop.AutoSize = true;
-            this.lblStop.Location = new System.Drawing.Point(7, 112);
-            this.lblStop.Name = "lblStop";
-            this.lblStop.Size = new System.Drawing.Size(100, 15);
-            this.lblStop.TabIndex = 74;
-            this.lblStop.Text = "Burning stop :";
-            // 
-            // lblStart
-            // 
-            this.lblStart.AutoSize = true;
-            this.lblStart.Location = new System.Drawing.Point(6, 74);
-            this.lblStart.Name = "lblStart";
-            this.lblStart.Size = new System.Drawing.Size(99, 15);
-            this.lblStart.TabIndex = 73;
-            this.lblStart.Text = "Burning start :";
-            // 
-            // lblDetails
-            // 
-            this.lblDetails.AutoSize = true;
-            this.lblDetails.Location = new System.Drawing.Point(734, 65);
-            this.lblDetails.Name = "lblDetails";
-            this.lblDetails.Size = new System.Drawing.Size(61, 15);
-            this.lblDetails.TabIndex = 72;
-            this.lblDetails.Text = "Details :";
-            // 
-            // txtBxDetails
-            // 
-            this.txtBxDetails.Location = new System.Drawing.Point(799, 65);
-            this.txtBxDetails.Multiline = true;
-            this.txtBxDetails.Name = "txtBxDetails";
-            this.txtBxDetails.Size = new System.Drawing.Size(234, 86);
-            this.txtBxDetails.TabIndex = 71;
-            // 
-            // cmbPathSelection
-            // 
-            this.cmbPathSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPathSelection.FormattingEnabled = true;
-            this.cmbPathSelection.Items.AddRange(new object[] {
-            "DL",
-            "UL"});
-            this.cmbPathSelection.Location = new System.Drawing.Point(801, 31);
-            this.cmbPathSelection.Name = "cmbPathSelection";
-            this.cmbPathSelection.Size = new System.Drawing.Size(121, 23);
-            this.cmbPathSelection.TabIndex = 70;
-            // 
-            // lblPointOfError
-            // 
-            this.lblPointOfError.AutoSize = true;
-            this.lblPointOfError.Location = new System.Drawing.Point(718, 34);
-            this.lblPointOfError.Name = "lblPointOfError";
-            this.lblPointOfError.Size = new System.Drawing.Size(77, 15);
-            this.lblPointOfError.TabIndex = 69;
-            this.lblPointOfError.Text = "이상지점 :";
-            // 
-            // lblTestResult
-            // 
-            this.lblTestResult.AutoSize = true;
-            this.lblTestResult.Location = new System.Drawing.Point(245, 34);
-            this.lblTestResult.Name = "lblTestResult";
-            this.lblTestResult.Size = new System.Drawing.Size(97, 15);
-            this.lblTestResult.TabIndex = 67;
-            this.lblTestResult.Text = "테스트 통과 :";
-            // 
-            // cmbTestItems
-            // 
-            this.cmbTestItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTestItems.FormattingEnabled = true;
-            this.cmbTestItems.Items.AddRange(new object[] {
-            "Pass",
-            "Fail"});
-            this.cmbTestItems.Location = new System.Drawing.Point(563, 97);
-            this.cmbTestItems.Name = "cmbTestItems";
-            this.cmbTestItems.Size = new System.Drawing.Size(121, 23);
-            this.cmbTestItems.TabIndex = 84;
-            // 
-            // lblTestItem
-            // 
-            this.lblTestItem.AutoSize = true;
-            this.lblTestItem.Location = new System.Drawing.Point(480, 105);
-            this.lblTestItem.Name = "lblTestItem";
-            this.lblTestItem.Size = new System.Drawing.Size(76, 15);
-            this.lblTestItem.TabIndex = 83;
-            this.lblTestItem.Text = "Test Item :";
-            // 
-            // txtBxDCMSerial
-            // 
-            this.txtBxDCMSerial.Location = new System.Drawing.Point(131, 188);
-            this.txtBxDCMSerial.Name = "txtBxDCMSerial";
-            this.txtBxDCMSerial.Size = new System.Drawing.Size(121, 25);
-            this.txtBxDCMSerial.TabIndex = 86;
-            // 
-            // lblDCMSerial
-            // 
-            this.lblDCMSerial.AutoSize = true;
-            this.lblDCMSerial.Location = new System.Drawing.Point(7, 191);
-            this.lblDCMSerial.Name = "lblDCMSerial";
-            this.lblDCMSerial.Size = new System.Drawing.Size(118, 15);
-            this.lblDCMSerial.TabIndex = 85;
-            this.lblDCMSerial.Text = "DCM Serial No. :";
-            // 
-            // txtBxGiftBxSerial
-            // 
-            this.txtBxGiftBxSerial.Location = new System.Drawing.Point(446, 188);
-            this.txtBxGiftBxSerial.Name = "txtBxGiftBxSerial";
-            this.txtBxGiftBxSerial.Size = new System.Drawing.Size(121, 25);
-            this.txtBxGiftBxSerial.TabIndex = 88;
-            // 
-            // lblGiftBoxSerial
-            // 
-            this.lblGiftBoxSerial.AutoSize = true;
-            this.lblGiftBoxSerial.Location = new System.Drawing.Point(262, 191);
-            this.lblGiftBoxSerial.Name = "lblGiftBoxSerial";
-            this.lblGiftBoxSerial.Size = new System.Drawing.Size(178, 15);
-            this.lblGiftBoxSerial.TabIndex = 87;
-            this.lblGiftBoxSerial.Text = "Gift Box DCM Serial No. :";
-            // 
-            // txtBxCartonBoxDCMSerial
-            // 
-            this.txtBxCartonBoxDCMSerial.Location = new System.Drawing.Point(801, 188);
-            this.txtBxCartonBoxDCMSerial.Name = "txtBxCartonBoxDCMSerial";
-            this.txtBxCartonBoxDCMSerial.Size = new System.Drawing.Size(121, 25);
-            this.txtBxCartonBoxDCMSerial.TabIndex = 90;
-            // 
-            // lblCartonBxDCMSerial
-            // 
-            this.lblCartonBxDCMSerial.AutoSize = true;
-            this.lblCartonBxDCMSerial.Location = new System.Drawing.Point(585, 191);
-            this.lblCartonBxDCMSerial.Name = "lblCartonBxDCMSerial";
-            this.lblCartonBxDCMSerial.Size = new System.Drawing.Size(199, 15);
-            this.lblCartonBxDCMSerial.TabIndex = 89;
-            this.lblCartonBxDCMSerial.Text = "Carton Box DCM Serial No. :";
-            // 
-            // lblProductionDate
-            // 
-            this.lblProductionDate.AutoSize = true;
-            this.lblProductionDate.Location = new System.Drawing.Point(6, 231);
-            this.lblProductionDate.Name = "lblProductionDate";
-            this.lblProductionDate.Size = new System.Drawing.Size(121, 15);
-            this.lblProductionDate.TabIndex = 91;
-            this.lblProductionDate.Text = "Production date :";
-            // 
-            // dateTimePickerProductionDate
-            // 
-            this.dateTimePickerProductionDate.Location = new System.Drawing.Point(130, 224);
-            this.dateTimePickerProductionDate.Name = "dateTimePickerProductionDate";
-            this.dateTimePickerProductionDate.Size = new System.Drawing.Size(200, 25);
-            this.dateTimePickerProductionDate.TabIndex = 92;
-            // 
-            // grpBoxShippingData
-            // 
-            this.grpBoxShippingData.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.grpBoxShippingData.Controls.Add(this.button3);
-            this.grpBoxShippingData.Controls.Add(this.dateTimePicker4);
-            this.grpBoxShippingData.Controls.Add(this.button4);
-            this.grpBoxShippingData.Controls.Add(this.txtBxProductionInputDCMSerialNo);
-            this.grpBoxShippingData.Controls.Add(this.label15);
-            this.grpBoxShippingData.Controls.Add(this.lblProductionDataDCMSerialNo);
-            this.grpBoxShippingData.Controls.Add(this.txtBxProductAdapterSerialNo);
-            this.grpBoxShippingData.Controls.Add(this.lblProductAdapterSerialNo);
-            this.grpBoxShippingData.Controls.Add(this.txtBxProductModemSerialNo);
-            this.grpBoxShippingData.Controls.Add(this.lblProductionModemSerialNo);
-            this.grpBoxShippingData.Controls.Add(this.txtBxProductCSSerialNo);
-            this.grpBoxShippingData.Controls.Add(this.lblProductCSserialNo);
-            this.grpBoxShippingData.Controls.Add(this.cmbProductionDataSelection);
-            this.grpBoxShippingData.Controls.Add(this.lblProductDataTypeSelection);
-            this.grpBoxShippingData.Location = new System.Drawing.Point(219, 469);
-            this.grpBoxShippingData.Name = "grpBoxShippingData";
-            this.grpBoxShippingData.Size = new System.Drawing.Size(1149, 178);
-            this.grpBoxShippingData.TabIndex = 69;
-            this.grpBoxShippingData.TabStop = false;
-            this.grpBoxShippingData.Text = "Production Data 입력";
-            // 
-            // cmbProductionDataSelection
-            // 
-            this.cmbProductionDataSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbProductionDataSelection.FormattingEnabled = true;
-            this.cmbProductionDataSelection.Items.AddRange(new object[] {
-            "Pass",
-            "Fail"});
-            this.cmbProductionDataSelection.Location = new System.Drawing.Point(133, 18);
-            this.cmbProductionDataSelection.Name = "cmbProductionDataSelection";
-            this.cmbProductionDataSelection.Size = new System.Drawing.Size(121, 23);
-            this.cmbProductionDataSelection.TabIndex = 98;
-            // 
-            // lblProductDataTypeSelection
-            // 
-            this.lblProductDataTypeSelection.AutoSize = true;
-            this.lblProductDataTypeSelection.Location = new System.Drawing.Point(10, 21);
-            this.lblProductDataTypeSelection.Name = "lblProductDataTypeSelection";
-            this.lblProductDataTypeSelection.Size = new System.Drawing.Size(117, 15);
-            this.lblProductDataTypeSelection.TabIndex = 97;
-            this.lblProductDataTypeSelection.Text = "Data 종류 선택 :";
-            // 
-            // txtBxProductModemSerialNo
-            // 
-            this.txtBxProductModemSerialNo.Location = new System.Drawing.Point(663, 16);
-            this.txtBxProductModemSerialNo.Name = "txtBxProductModemSerialNo";
-            this.txtBxProductModemSerialNo.Size = new System.Drawing.Size(121, 25);
-            this.txtBxProductModemSerialNo.TabIndex = 102;
-            // 
-            // lblProductionModemSerialNo
-            // 
-            this.lblProductionModemSerialNo.AutoSize = true;
-            this.lblProductionModemSerialNo.Location = new System.Drawing.Point(526, 21);
-            this.lblProductionModemSerialNo.Name = "lblProductionModemSerialNo";
-            this.lblProductionModemSerialNo.Size = new System.Drawing.Size(134, 15);
-            this.lblProductionModemSerialNo.TabIndex = 101;
-            this.lblProductionModemSerialNo.Text = "Modem Serial No. :";
-            // 
-            // txtBxProductCSSerialNo
-            // 
-            this.txtBxProductCSSerialNo.Location = new System.Drawing.Point(386, 18);
-            this.txtBxProductCSSerialNo.Name = "txtBxProductCSSerialNo";
-            this.txtBxProductCSSerialNo.Size = new System.Drawing.Size(121, 25);
-            this.txtBxProductCSSerialNo.TabIndex = 100;
-            // 
-            // lblProductCSserialNo
-            // 
-            this.lblProductCSserialNo.AutoSize = true;
-            this.lblProductCSserialNo.Location = new System.Drawing.Point(274, 21);
-            this.lblProductCSserialNo.Name = "lblProductCSserialNo";
-            this.lblProductCSserialNo.Size = new System.Drawing.Size(106, 15);
-            this.lblProductCSserialNo.TabIndex = 99;
-            this.lblProductCSserialNo.Text = "CS Serial No. :";
-            // 
-            // txtBxProductionInputDCMSerialNo
-            // 
-            this.txtBxProductionInputDCMSerialNo.Location = new System.Drawing.Point(663, 54);
-            this.txtBxProductionInputDCMSerialNo.Name = "txtBxProductionInputDCMSerialNo";
-            this.txtBxProductionInputDCMSerialNo.Size = new System.Drawing.Size(121, 25);
-            this.txtBxProductionInputDCMSerialNo.TabIndex = 106;
-            // 
-            // lblProductionDataDCMSerialNo
-            // 
-            this.lblProductionDataDCMSerialNo.AutoSize = true;
-            this.lblProductionDataDCMSerialNo.Location = new System.Drawing.Point(542, 59);
-            this.lblProductionDataDCMSerialNo.Name = "lblProductionDataDCMSerialNo";
-            this.lblProductionDataDCMSerialNo.Size = new System.Drawing.Size(118, 15);
-            this.lblProductionDataDCMSerialNo.TabIndex = 105;
-            this.lblProductionDataDCMSerialNo.Text = "DCM Serial No. :";
-            // 
-            // txtBxProductAdapterSerialNo
-            // 
-            this.txtBxProductAdapterSerialNo.Location = new System.Drawing.Point(386, 56);
-            this.txtBxProductAdapterSerialNo.Name = "txtBxProductAdapterSerialNo";
-            this.txtBxProductAdapterSerialNo.Size = new System.Drawing.Size(121, 25);
-            this.txtBxProductAdapterSerialNo.TabIndex = 104;
-            // 
-            // lblProductAdapterSerialNo
-            // 
-            this.lblProductAdapterSerialNo.AutoSize = true;
-            this.lblProductAdapterSerialNo.Location = new System.Drawing.Point(245, 59);
-            this.lblProductAdapterSerialNo.Name = "lblProductAdapterSerialNo";
-            this.lblProductAdapterSerialNo.Size = new System.Drawing.Size(135, 15);
-            this.lblProductAdapterSerialNo.TabIndex = 103;
-            this.lblProductAdapterSerialNo.Text = "Adapter Serial No. :";
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(134, 96);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 25);
-            this.dateTimePicker4.TabIndex = 94;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(10, 103);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(121, 15);
-            this.label15.TabIndex = 93;
-            this.label15.Text = "Production date :";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Location = new System.Drawing.Point(745, 378);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 45);
-            this.button1.TabIndex = 93;
-            this.button1.Text = "공정 Data 입력";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button2.Location = new System.Drawing.Point(873, 378);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 45);
-            this.button2.TabIndex = 94;
-            this.button2.Text = "공정 Data Reset";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button3.Location = new System.Drawing.Point(873, 114);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 45);
-            this.button3.TabIndex = 96;
-            this.button3.Text = "출하 Data Reset";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button4.Location = new System.Drawing.Point(745, 114);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(122, 45);
-            this.button4.TabIndex = 95;
-            this.button4.Text = "출하 Data 입력";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // btnTestPass
-            // 
-            this.btnTestPass.Location = new System.Drawing.Point(348, 13);
-            this.btnTestPass.Name = "btnTestPass";
-            this.btnTestPass.Size = new System.Drawing.Size(75, 23);
-            this.btnTestPass.TabIndex = 95;
-            this.btnTestPass.Text = "Pass";
-            this.btnTestPass.UseVisualStyleBackColor = true;
-            // 
-            // btnFail
-            // 
-            this.btnFail.Location = new System.Drawing.Point(348, 41);
-            this.btnFail.Name = "btnFail";
-            this.btnFail.Size = new System.Drawing.Size(75, 23);
-            this.btnFail.TabIndex = 96;
-            this.btnFail.Text = "Fail";
-            this.btnFail.UseVisualStyleBackColor = true;
-            this.btnFail.Click += new System.EventHandler(this.btnFail_Click);
-            // 
-            // lblBurningTime
-            // 
-            this.lblBurningTime.AutoSize = true;
-            this.lblBurningTime.Location = new System.Drawing.Point(332, 112);
-            this.lblBurningTime.Name = "lblBurningTime";
-            this.lblBurningTime.Size = new System.Drawing.Size(91, 15);
-            this.lblBurningTime.TabIndex = 97;
-            this.lblBurningTime.Text = "Burning Time";
             // 
             // grpBoxFixRepairList
             // 
@@ -1101,32 +686,459 @@
             this.lblRepairLstSoldering.TabIndex = 0;
             this.lblRepairLstSoldering.Text = "수삽 Fail";
             // 
+            // lblBurningTime
+            // 
+            this.lblBurningTime.AutoSize = true;
+            this.lblBurningTime.Location = new System.Drawing.Point(339, 74);
+            this.lblBurningTime.Name = "lblBurningTime";
+            this.lblBurningTime.Size = new System.Drawing.Size(91, 15);
+            this.lblBurningTime.TabIndex = 97;
+            this.lblBurningTime.Text = "Burning Time";
+            // 
+            // btnFail
+            // 
+            this.btnFail.Location = new System.Drawing.Point(583, 41);
+            this.btnFail.Name = "btnFail";
+            this.btnFail.Size = new System.Drawing.Size(75, 23);
+            this.btnFail.TabIndex = 96;
+            this.btnFail.Text = "Fail";
+            this.btnFail.UseVisualStyleBackColor = true;
+            this.btnFail.Click += new System.EventHandler(this.btnFail_Click);
+            // 
+            // btnTestPass
+            // 
+            this.btnTestPass.Location = new System.Drawing.Point(583, 13);
+            this.btnTestPass.Name = "btnTestPass";
+            this.btnTestPass.Size = new System.Drawing.Size(75, 23);
+            this.btnTestPass.TabIndex = 95;
+            this.btnTestPass.Text = "Pass";
+            this.btnTestPass.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button2.Location = new System.Drawing.Point(873, 378);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(122, 45);
+            this.button2.TabIndex = 94;
+            this.button2.Text = "공정 Data Reset";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.Location = new System.Drawing.Point(745, 378);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 45);
+            this.button1.TabIndex = 93;
+            this.button1.Text = "공정 Data 입력";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerProductionDate
+            // 
+            this.dateTimePickerProductionDate.Location = new System.Drawing.Point(130, 224);
+            this.dateTimePickerProductionDate.Name = "dateTimePickerProductionDate";
+            this.dateTimePickerProductionDate.Size = new System.Drawing.Size(200, 25);
+            this.dateTimePickerProductionDate.TabIndex = 92;
+            // 
+            // lblProductionDate
+            // 
+            this.lblProductionDate.AutoSize = true;
+            this.lblProductionDate.Location = new System.Drawing.Point(6, 231);
+            this.lblProductionDate.Name = "lblProductionDate";
+            this.lblProductionDate.Size = new System.Drawing.Size(121, 15);
+            this.lblProductionDate.TabIndex = 91;
+            this.lblProductionDate.Text = "Production date :";
+            // 
+            // txtBxCartonBoxDCMSerial
+            // 
+            this.txtBxCartonBoxDCMSerial.Location = new System.Drawing.Point(801, 188);
+            this.txtBxCartonBoxDCMSerial.Name = "txtBxCartonBoxDCMSerial";
+            this.txtBxCartonBoxDCMSerial.Size = new System.Drawing.Size(121, 25);
+            this.txtBxCartonBoxDCMSerial.TabIndex = 90;
+            // 
+            // lblCartonBxDCMSerial
+            // 
+            this.lblCartonBxDCMSerial.AutoSize = true;
+            this.lblCartonBxDCMSerial.Location = new System.Drawing.Point(585, 191);
+            this.lblCartonBxDCMSerial.Name = "lblCartonBxDCMSerial";
+            this.lblCartonBxDCMSerial.Size = new System.Drawing.Size(199, 15);
+            this.lblCartonBxDCMSerial.TabIndex = 89;
+            this.lblCartonBxDCMSerial.Text = "Carton Box DCM Serial No. :";
+            // 
+            // txtBxGiftBxSerial
+            // 
+            this.txtBxGiftBxSerial.Location = new System.Drawing.Point(446, 188);
+            this.txtBxGiftBxSerial.Name = "txtBxGiftBxSerial";
+            this.txtBxGiftBxSerial.Size = new System.Drawing.Size(121, 25);
+            this.txtBxGiftBxSerial.TabIndex = 88;
+            // 
+            // lblGiftBoxSerial
+            // 
+            this.lblGiftBoxSerial.AutoSize = true;
+            this.lblGiftBoxSerial.Location = new System.Drawing.Point(262, 191);
+            this.lblGiftBoxSerial.Name = "lblGiftBoxSerial";
+            this.lblGiftBoxSerial.Size = new System.Drawing.Size(178, 15);
+            this.lblGiftBoxSerial.TabIndex = 87;
+            this.lblGiftBoxSerial.Text = "Gift Box DCM Serial No. :";
+            // 
+            // txtBxDCMSerial
+            // 
+            this.txtBxDCMSerial.Location = new System.Drawing.Point(131, 188);
+            this.txtBxDCMSerial.Name = "txtBxDCMSerial";
+            this.txtBxDCMSerial.Size = new System.Drawing.Size(121, 25);
+            this.txtBxDCMSerial.TabIndex = 86;
+            // 
+            // lblDCMSerial
+            // 
+            this.lblDCMSerial.AutoSize = true;
+            this.lblDCMSerial.Location = new System.Drawing.Point(7, 191);
+            this.lblDCMSerial.Name = "lblDCMSerial";
+            this.lblDCMSerial.Size = new System.Drawing.Size(118, 15);
+            this.lblDCMSerial.TabIndex = 85;
+            this.lblDCMSerial.Text = "DCM Serial No. :";
+            // 
+            // cmbTestItems
+            // 
+            this.cmbTestItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTestItems.FormattingEnabled = true;
+            this.cmbTestItems.Items.AddRange(new object[] {
+            "Pass",
+            "Fail"});
+            this.cmbTestItems.Location = new System.Drawing.Point(584, 97);
+            this.cmbTestItems.Name = "cmbTestItems";
+            this.cmbTestItems.Size = new System.Drawing.Size(121, 23);
+            this.cmbTestItems.TabIndex = 84;
+            // 
+            // lblTestItem
+            // 
+            this.lblTestItem.AutoSize = true;
+            this.lblTestItem.Location = new System.Drawing.Point(501, 105);
+            this.lblTestItem.Name = "lblTestItem";
+            this.lblTestItem.Size = new System.Drawing.Size(76, 15);
+            this.lblTestItem.TabIndex = 83;
+            this.lblTestItem.Text = "Test Item :";
+            // 
+            // cmbBurningYesNo
+            // 
+            this.cmbBurningYesNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBurningYesNo.FormattingEnabled = true;
+            this.cmbBurningYesNo.Items.AddRange(new object[] {
+            "Pass",
+            "Fail"});
+            this.cmbBurningYesNo.Location = new System.Drawing.Point(583, 68);
+            this.cmbBurningYesNo.Name = "cmbBurningYesNo";
+            this.cmbBurningYesNo.Size = new System.Drawing.Size(121, 23);
+            this.cmbBurningYesNo.TabIndex = 82;
+            // 
+            // lblBurningYesNo
+            // 
+            this.lblBurningYesNo.AutoSize = true;
+            this.lblBurningYesNo.Location = new System.Drawing.Point(470, 74);
+            this.lblBurningYesNo.Name = "lblBurningYesNo";
+            this.lblBurningYesNo.Size = new System.Drawing.Size(107, 15);
+            this.lblBurningYesNo.TabIndex = 81;
+            this.lblBurningYesNo.Text = "Burning 유/무 :";
+            // 
+            // txtBxSerialNo
+            // 
+            this.txtBxSerialNo.Location = new System.Drawing.Point(118, 31);
+            this.txtBxSerialNo.Name = "txtBxSerialNo";
+            this.txtBxSerialNo.Size = new System.Drawing.Size(121, 25);
+            this.txtBxSerialNo.TabIndex = 80;
+            // 
+            // lblSerialNo
+            // 
+            this.lblSerialNo.AutoSize = true;
+            this.lblSerialNo.Location = new System.Drawing.Point(6, 34);
+            this.lblSerialNo.Name = "lblSerialNo";
+            this.lblSerialNo.Size = new System.Drawing.Size(106, 15);
+            this.lblSerialNo.TabIndex = 79;
+            this.lblSerialNo.Text = "CS Serial No. :";
+            // 
+            // cmbErrorCategory
+            // 
+            this.cmbErrorCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbErrorCategory.FormattingEnabled = true;
+            this.cmbErrorCategory.Items.AddRange(new object[] {
+            "Pass",
+            "Fail"});
+            this.cmbErrorCategory.Location = new System.Drawing.Point(1011, 31);
+            this.cmbErrorCategory.Name = "cmbErrorCategory";
+            this.cmbErrorCategory.Size = new System.Drawing.Size(121, 23);
+            this.cmbErrorCategory.TabIndex = 78;
+            // 
+            // lblErrorClassification
+            // 
+            this.lblErrorClassification.AutoSize = true;
+            this.lblErrorClassification.Location = new System.Drawing.Point(958, 34);
+            this.lblErrorClassification.Name = "lblErrorClassification";
+            this.lblErrorClassification.Size = new System.Drawing.Size(47, 15);
+            this.lblErrorClassification.TabIndex = 77;
+            this.lblErrorClassification.Text = "분류 :";
+            // 
+            // dTPickerBurnStop
+            // 
+            this.dTPickerBurnStop.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dTPickerBurnStop.Location = new System.Drawing.Point(113, 105);
+            this.dTPickerBurnStop.Name = "dTPickerBurnStop";
+            this.dTPickerBurnStop.Size = new System.Drawing.Size(200, 25);
+            this.dTPickerBurnStop.TabIndex = 76;
+            // 
+            // dTPickerBurnStat
+            // 
+            this.dTPickerBurnStat.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dTPickerBurnStat.Location = new System.Drawing.Point(112, 69);
+            this.dTPickerBurnStat.Name = "dTPickerBurnStat";
+            this.dTPickerBurnStat.Size = new System.Drawing.Size(200, 25);
+            this.dTPickerBurnStat.TabIndex = 75;
+            // 
+            // lblStop
+            // 
+            this.lblStop.AutoSize = true;
+            this.lblStop.Location = new System.Drawing.Point(7, 112);
+            this.lblStop.Name = "lblStop";
+            this.lblStop.Size = new System.Drawing.Size(100, 15);
+            this.lblStop.TabIndex = 74;
+            this.lblStop.Text = "Burning stop :";
+            // 
+            // lblStart
+            // 
+            this.lblStart.AutoSize = true;
+            this.lblStart.Location = new System.Drawing.Point(6, 74);
+            this.lblStart.Name = "lblStart";
+            this.lblStart.Size = new System.Drawing.Size(99, 15);
+            this.lblStart.TabIndex = 73;
+            this.lblStart.Text = "Burning start :";
+            // 
+            // lblDetails
+            // 
+            this.lblDetails.AutoSize = true;
+            this.lblDetails.Location = new System.Drawing.Point(734, 74);
+            this.lblDetails.Name = "lblDetails";
+            this.lblDetails.Size = new System.Drawing.Size(61, 15);
+            this.lblDetails.TabIndex = 72;
+            this.lblDetails.Text = "Details :";
+            // 
+            // txtBxDetails
+            // 
+            this.txtBxDetails.Location = new System.Drawing.Point(801, 68);
+            this.txtBxDetails.Multiline = true;
+            this.txtBxDetails.Name = "txtBxDetails";
+            this.txtBxDetails.Size = new System.Drawing.Size(234, 86);
+            this.txtBxDetails.TabIndex = 71;
+            // 
+            // cmbPathSelection
+            // 
+            this.cmbPathSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPathSelection.FormattingEnabled = true;
+            this.cmbPathSelection.Items.AddRange(new object[] {
+            "DL",
+            "UL"});
+            this.cmbPathSelection.Location = new System.Drawing.Point(801, 31);
+            this.cmbPathSelection.Name = "cmbPathSelection";
+            this.cmbPathSelection.Size = new System.Drawing.Size(121, 23);
+            this.cmbPathSelection.TabIndex = 70;
+            // 
+            // lblPointOfError
+            // 
+            this.lblPointOfError.AutoSize = true;
+            this.lblPointOfError.Location = new System.Drawing.Point(718, 34);
+            this.lblPointOfError.Name = "lblPointOfError";
+            this.lblPointOfError.Size = new System.Drawing.Size(77, 15);
+            this.lblPointOfError.TabIndex = 69;
+            this.lblPointOfError.Text = "이상지점 :";
+            // 
+            // lblTestResult
+            // 
+            this.lblTestResult.AutoSize = true;
+            this.lblTestResult.Location = new System.Drawing.Point(480, 34);
+            this.lblTestResult.Name = "lblTestResult";
+            this.lblTestResult.Size = new System.Drawing.Size(97, 15);
+            this.lblTestResult.TabIndex = 67;
+            this.lblTestResult.Text = "테스트 통과 :";
+            // 
+            // grpSerialMatching
+            // 
+            this.grpSerialMatching.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.grpSerialMatching.Controls.Add(this.button3);
+            this.grpSerialMatching.Controls.Add(this.dateTimePicker4);
+            this.grpSerialMatching.Controls.Add(this.button4);
+            this.grpSerialMatching.Controls.Add(this.txtBxProductionInputDCMSerialNo);
+            this.grpSerialMatching.Controls.Add(this.label15);
+            this.grpSerialMatching.Controls.Add(this.lblProductionDataDCMSerialNo);
+            this.grpSerialMatching.Controls.Add(this.txtBxProductAdapterSerialNo);
+            this.grpSerialMatching.Controls.Add(this.lblProductAdapterSerialNo);
+            this.grpSerialMatching.Controls.Add(this.txtBxProductModemSerialNo);
+            this.grpSerialMatching.Controls.Add(this.lblProductionModemSerialNo);
+            this.grpSerialMatching.Controls.Add(this.txtBxProductCSSerialNo);
+            this.grpSerialMatching.Controls.Add(this.lblProductCSserialNo);
+            this.grpSerialMatching.Controls.Add(this.cmbProductionDataSelection);
+            this.grpSerialMatching.Controls.Add(this.lblProductDataTypeSelection);
+            this.grpSerialMatching.Location = new System.Drawing.Point(219, 469);
+            this.grpSerialMatching.Name = "grpSerialMatching";
+            this.grpSerialMatching.Size = new System.Drawing.Size(1149, 178);
+            this.grpSerialMatching.TabIndex = 69;
+            this.grpSerialMatching.TabStop = false;
+            this.grpSerialMatching.Text = "Production Data 입력";
+            // 
+            // button3
+            // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button3.Location = new System.Drawing.Point(873, 114);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(122, 45);
+            this.button3.TabIndex = 96;
+            this.button3.Text = "출하 Data Reset";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Location = new System.Drawing.Point(134, 96);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(200, 25);
+            this.dateTimePicker4.TabIndex = 94;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button4.Location = new System.Drawing.Point(745, 114);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(122, 45);
+            this.button4.TabIndex = 95;
+            this.button4.Text = "출하 Data 입력";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // txtBxProductionInputDCMSerialNo
+            // 
+            this.txtBxProductionInputDCMSerialNo.Location = new System.Drawing.Point(663, 54);
+            this.txtBxProductionInputDCMSerialNo.Name = "txtBxProductionInputDCMSerialNo";
+            this.txtBxProductionInputDCMSerialNo.Size = new System.Drawing.Size(121, 25);
+            this.txtBxProductionInputDCMSerialNo.TabIndex = 106;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(10, 103);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(121, 15);
+            this.label15.TabIndex = 93;
+            this.label15.Text = "Production date :";
+            // 
+            // lblProductionDataDCMSerialNo
+            // 
+            this.lblProductionDataDCMSerialNo.AutoSize = true;
+            this.lblProductionDataDCMSerialNo.Location = new System.Drawing.Point(542, 59);
+            this.lblProductionDataDCMSerialNo.Name = "lblProductionDataDCMSerialNo";
+            this.lblProductionDataDCMSerialNo.Size = new System.Drawing.Size(118, 15);
+            this.lblProductionDataDCMSerialNo.TabIndex = 105;
+            this.lblProductionDataDCMSerialNo.Text = "DCM Serial No. :";
+            // 
+            // txtBxProductAdapterSerialNo
+            // 
+            this.txtBxProductAdapterSerialNo.Location = new System.Drawing.Point(386, 56);
+            this.txtBxProductAdapterSerialNo.Name = "txtBxProductAdapterSerialNo";
+            this.txtBxProductAdapterSerialNo.Size = new System.Drawing.Size(121, 25);
+            this.txtBxProductAdapterSerialNo.TabIndex = 104;
+            // 
+            // lblProductAdapterSerialNo
+            // 
+            this.lblProductAdapterSerialNo.AutoSize = true;
+            this.lblProductAdapterSerialNo.Location = new System.Drawing.Point(245, 59);
+            this.lblProductAdapterSerialNo.Name = "lblProductAdapterSerialNo";
+            this.lblProductAdapterSerialNo.Size = new System.Drawing.Size(135, 15);
+            this.lblProductAdapterSerialNo.TabIndex = 103;
+            this.lblProductAdapterSerialNo.Text = "Adapter Serial No. :";
+            // 
+            // txtBxProductModemSerialNo
+            // 
+            this.txtBxProductModemSerialNo.Location = new System.Drawing.Point(663, 16);
+            this.txtBxProductModemSerialNo.Name = "txtBxProductModemSerialNo";
+            this.txtBxProductModemSerialNo.Size = new System.Drawing.Size(121, 25);
+            this.txtBxProductModemSerialNo.TabIndex = 102;
+            // 
+            // lblProductionModemSerialNo
+            // 
+            this.lblProductionModemSerialNo.AutoSize = true;
+            this.lblProductionModemSerialNo.Location = new System.Drawing.Point(526, 21);
+            this.lblProductionModemSerialNo.Name = "lblProductionModemSerialNo";
+            this.lblProductionModemSerialNo.Size = new System.Drawing.Size(134, 15);
+            this.lblProductionModemSerialNo.TabIndex = 101;
+            this.lblProductionModemSerialNo.Text = "Modem Serial No. :";
+            // 
+            // txtBxProductCSSerialNo
+            // 
+            this.txtBxProductCSSerialNo.Location = new System.Drawing.Point(386, 18);
+            this.txtBxProductCSSerialNo.Name = "txtBxProductCSSerialNo";
+            this.txtBxProductCSSerialNo.Size = new System.Drawing.Size(121, 25);
+            this.txtBxProductCSSerialNo.TabIndex = 100;
+            // 
+            // lblProductCSserialNo
+            // 
+            this.lblProductCSserialNo.AutoSize = true;
+            this.lblProductCSserialNo.Location = new System.Drawing.Point(274, 21);
+            this.lblProductCSserialNo.Name = "lblProductCSserialNo";
+            this.lblProductCSserialNo.Size = new System.Drawing.Size(106, 15);
+            this.lblProductCSserialNo.TabIndex = 99;
+            this.lblProductCSserialNo.Text = "CS Serial No. :";
+            // 
+            // cmbProductionDataSelection
+            // 
+            this.cmbProductionDataSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProductionDataSelection.FormattingEnabled = true;
+            this.cmbProductionDataSelection.Items.AddRange(new object[] {
+            "Pass",
+            "Fail"});
+            this.cmbProductionDataSelection.Location = new System.Drawing.Point(133, 18);
+            this.cmbProductionDataSelection.Name = "cmbProductionDataSelection";
+            this.cmbProductionDataSelection.Size = new System.Drawing.Size(121, 23);
+            this.cmbProductionDataSelection.TabIndex = 98;
+            // 
+            // lblProductDataTypeSelection
+            // 
+            this.lblProductDataTypeSelection.AutoSize = true;
+            this.lblProductDataTypeSelection.Location = new System.Drawing.Point(10, 21);
+            this.lblProductDataTypeSelection.Name = "lblProductDataTypeSelection";
+            this.lblProductDataTypeSelection.Size = new System.Drawing.Size(117, 15);
+            this.lblProductDataTypeSelection.TabIndex = 97;
+            this.lblProductDataTypeSelection.Text = "Serial Matching :";
+            // 
+            // grpBoxDataSearch
+            // 
+            this.grpBoxDataSearch.Controls.Add(this.dataGridView1);
+            this.grpBoxDataSearch.Controls.Add(this.cmbBxSrch);
+            this.grpBoxDataSearch.Controls.Add(this.btnSrch);
+            this.grpBoxDataSearch.Controls.Add(this.btnEdt);
+            this.grpBoxDataSearch.Controls.Add(this.btnAdd);
+            this.grpBoxDataSearch.Controls.Add(this.btnDel);
+            this.grpBoxDataSearch.Controls.Add(this.btnExcel);
+            this.grpBoxDataSearch.Location = new System.Drawing.Point(219, 669);
+            this.grpBoxDataSearch.Name = "grpBoxDataSearch";
+            this.grpBoxDataSearch.Size = new System.Drawing.Size(1219, 279);
+            this.grpBoxDataSearch.TabIndex = 70;
+            this.grpBoxDataSearch.TabStop = false;
+            this.grpBoxDataSearch.Text = "Data Search";
+            // 
             // frmSearchAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.PaleGreen;
-            this.ClientSize = new System.Drawing.Size(1537, 910);
-            this.Controls.Add(this.grpBoxShippingData);
+            this.ClientSize = new System.Drawing.Size(1900, 927);
+            this.Controls.Add(this.grpBoxDataSearch);
+            this.Controls.Add(this.grpSerialMatching);
             this.Controls.Add(this.grpBoxProcessData);
             this.Controls.Add(this.cmbCategory);
             this.Controls.Add(this.lblCategory);
             this.Controls.Add(this.cmbModel);
             this.Controls.Add(this.lblModel);
-            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.btnGetImage);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBxEmail);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtBxComp);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnEdt);
-            this.Controls.Add(this.btnSrch);
-            this.Controls.Add(this.cmbBxSrch);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtBxSrch);
             this.Controls.Add(this.txtBxWWW);
@@ -1160,10 +1172,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpBoxProcessData.ResumeLayout(false);
             this.grpBoxProcessData.PerformLayout();
-            this.grpBoxShippingData.ResumeLayout(false);
-            this.grpBoxShippingData.PerformLayout();
             this.grpBoxFixRepairList.ResumeLayout(false);
             this.grpBoxFixRepairList.PerformLayout();
+            this.grpSerialMatching.ResumeLayout(false);
+            this.grpSerialMatching.PerformLayout();
+            this.grpBoxDataSearch.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1243,7 +1256,7 @@
         private System.Windows.Forms.Label lblGiftBoxSerial;
         private System.Windows.Forms.TextBox txtBxDCMSerial;
         private System.Windows.Forms.Label lblDCMSerial;
-        private System.Windows.Forms.GroupBox grpBoxShippingData;
+        private System.Windows.Forms.GroupBox grpSerialMatching;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.TextBox txtBxProductionInputDCMSerialNo;
         private System.Windows.Forms.Label label15;
@@ -1273,5 +1286,6 @@
         private System.Windows.Forms.Label lblRepairLstPartialInteg;
         private System.Windows.Forms.Label lblRepairLstTuning;
         private System.Windows.Forms.Label lblRepairLstSoldering;
+        private System.Windows.Forms.GroupBox grpBoxDataSearch;
     }
 }
