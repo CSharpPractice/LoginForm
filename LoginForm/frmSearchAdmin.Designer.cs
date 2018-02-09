@@ -89,8 +89,8 @@
             this.lblBurningTime = new System.Windows.Forms.Label();
             this.btnFail = new System.Windows.Forms.Button();
             this.btnTestPass = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnProcessDataReset = new System.Windows.Forms.Button();
+            this.btnProcessDataInput = new System.Windows.Forms.Button();
             this.dateTimePickerProductionDate = new System.Windows.Forms.DateTimePicker();
             this.lblProductionDate = new System.Windows.Forms.Label();
             this.txtBxCartonBoxDCMSerial = new System.Windows.Forms.TextBox();
@@ -117,9 +117,9 @@
             this.lblPointOfError = new System.Windows.Forms.Label();
             this.lblTestResult = new System.Windows.Forms.Label();
             this.grpSerialMatching = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnShippingDataReset = new System.Windows.Forms.Button();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnShippingDataInput = new System.Windows.Forms.Button();
             this.txtBxProductionInputDCMSerialNo = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.lblProductionDataDCMSerialNo = new System.Windows.Forms.Label();
@@ -132,6 +132,7 @@
             this.cmbProductionDataSelection = new System.Windows.Forms.ComboBox();
             this.lblProductDataTypeSelection = new System.Windows.Forms.Label();
             this.grpBoxDataSearch = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -216,11 +217,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(2573, 338);
+            this.label9.Location = new System.Drawing.Point(287, 50);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 15);
+            this.label9.Size = new System.Drawing.Size(63, 15);
             this.label9.TabIndex = 8;
-            this.label9.Text = "Search";
+            this.label9.Text = "Search :";
             // 
             // label10
             // 
@@ -322,9 +323,9 @@
             // 
             // txtBxSrch
             // 
-            this.txtBxSrch.Location = new System.Drawing.Point(2669, 335);
+            this.txtBxSrch.Location = new System.Drawing.Point(356, 45);
             this.txtBxSrch.Name = "txtBxSrch";
-            this.txtBxSrch.Size = new System.Drawing.Size(343, 25);
+            this.txtBxSrch.Size = new System.Drawing.Size(142, 25);
             this.txtBxSrch.TabIndex = 23;
             // 
             // dateTimePicker1
@@ -347,7 +348,7 @@
             "First Name",
             "Last Name",
             "Company"});
-            this.cmbBxSrch.Location = new System.Drawing.Point(8, 46);
+            this.cmbBxSrch.Location = new System.Drawing.Point(143, 45);
             this.cmbBxSrch.Name = "cmbBxSrch";
             this.cmbBxSrch.Size = new System.Drawing.Size(121, 23);
             this.cmbBxSrch.TabIndex = 25;
@@ -355,7 +356,7 @@
             // btnSrch
             // 
             this.btnSrch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSrch.Location = new System.Drawing.Point(145, 46);
+            this.btnSrch.Location = new System.Drawing.Point(514, 46);
             this.btnSrch.Name = "btnSrch";
             this.btnSrch.Size = new System.Drawing.Size(75, 23);
             this.btnSrch.TabIndex = 26;
@@ -366,7 +367,7 @@
             // btnEdt
             // 
             this.btnEdt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEdt.Location = new System.Drawing.Point(226, 46);
+            this.btnEdt.Location = new System.Drawing.Point(609, 46);
             this.btnEdt.Name = "btnEdt";
             this.btnEdt.Size = new System.Drawing.Size(75, 23);
             this.btnEdt.TabIndex = 27;
@@ -376,7 +377,7 @@
             // btnAdd
             // 
             this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAdd.Location = new System.Drawing.Point(307, 46);
+            this.btnAdd.Location = new System.Drawing.Point(702, 46);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 28;
@@ -387,7 +388,7 @@
             // btnDel
             // 
             this.btnDel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDel.Location = new System.Drawing.Point(388, 46);
+            this.btnDel.Location = new System.Drawing.Point(789, 46);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 29;
@@ -462,7 +463,7 @@
             // btnExcel
             // 
             this.btnExcel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnExcel.Location = new System.Drawing.Point(469, 46);
+            this.btnExcel.Location = new System.Drawing.Point(874, 46);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(75, 23);
             this.btnExcel.TabIndex = 37;
@@ -519,7 +520,7 @@
             "수삽",
             "Tuning",
             "반조립",
-            "Table",
+            "Table_Fail",
             "Burning",
             "ATS1",
             "ATS2",
@@ -551,8 +552,8 @@
             this.grpBoxProcessData.Controls.Add(this.lblBurningTime);
             this.grpBoxProcessData.Controls.Add(this.btnFail);
             this.grpBoxProcessData.Controls.Add(this.btnTestPass);
-            this.grpBoxProcessData.Controls.Add(this.button2);
-            this.grpBoxProcessData.Controls.Add(this.button1);
+            this.grpBoxProcessData.Controls.Add(this.btnProcessDataReset);
+            this.grpBoxProcessData.Controls.Add(this.btnProcessDataInput);
             this.grpBoxProcessData.Controls.Add(this.cmbSubCategory);
             this.grpBoxProcessData.Controls.Add(this.dateTimePickerProductionDate);
             this.grpBoxProcessData.Controls.Add(this.lblProcessCateg);
@@ -582,7 +583,7 @@
             this.grpBoxProcessData.Controls.Add(this.lblTestResult);
             this.grpBoxProcessData.Location = new System.Drawing.Point(219, 8);
             this.grpBoxProcessData.Name = "grpBoxProcessData";
-            this.grpBoxProcessData.Size = new System.Drawing.Size(1149, 437);
+            this.grpBoxProcessData.Size = new System.Drawing.Size(1149, 367);
             this.grpBoxProcessData.TabIndex = 67;
             this.grpBoxProcessData.TabStop = false;
             this.grpBoxProcessData.Text = "공정 Data 입력";
@@ -598,7 +599,7 @@
             this.grpBoxFixRepairList.Controls.Add(this.lblRepairLstPartialInteg);
             this.grpBoxFixRepairList.Controls.Add(this.lblRepairLstTuning);
             this.grpBoxFixRepairList.Controls.Add(this.lblRepairLstSoldering);
-            this.grpBoxFixRepairList.Location = new System.Drawing.Point(9, 278);
+            this.grpBoxFixRepairList.Location = new System.Drawing.Point(8, 259);
             this.grpBoxFixRepairList.Name = "grpBoxFixRepairList";
             this.grpBoxFixRepairList.Size = new System.Drawing.Size(409, 100);
             this.grpBoxFixRepairList.TabIndex = 108;
@@ -713,30 +714,32 @@
             this.btnTestPass.TabIndex = 95;
             this.btnTestPass.Text = "Pass";
             this.btnTestPass.UseVisualStyleBackColor = true;
+            this.btnTestPass.Click += new System.EventHandler(this.btnTestPass_Click);
             // 
-            // button2
+            // btnProcessDataReset
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button2.Location = new System.Drawing.Point(873, 378);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 45);
-            this.button2.TabIndex = 94;
-            this.button2.Text = "공정 Data Reset";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnProcessDataReset.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnProcessDataReset.Location = new System.Drawing.Point(929, 239);
+            this.btnProcessDataReset.Name = "btnProcessDataReset";
+            this.btnProcessDataReset.Size = new System.Drawing.Size(122, 45);
+            this.btnProcessDataReset.TabIndex = 94;
+            this.btnProcessDataReset.Text = "공정 Data Reset";
+            this.btnProcessDataReset.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnProcessDataInput
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Location = new System.Drawing.Point(745, 378);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 45);
-            this.button1.TabIndex = 93;
-            this.button1.Text = "공정 Data 입력";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnProcessDataInput.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnProcessDataInput.Location = new System.Drawing.Point(801, 239);
+            this.btnProcessDataInput.Name = "btnProcessDataInput";
+            this.btnProcessDataInput.Size = new System.Drawing.Size(122, 45);
+            this.btnProcessDataInput.TabIndex = 93;
+            this.btnProcessDataInput.Text = "공정 Data 입력";
+            this.btnProcessDataInput.UseVisualStyleBackColor = true;
+            this.btnProcessDataInput.Click += new System.EventHandler(this.btnProcessDataInput_Click);
             // 
             // dateTimePickerProductionDate
             // 
-            this.dateTimePickerProductionDate.Location = new System.Drawing.Point(130, 224);
+            this.dateTimePickerProductionDate.Location = new System.Drawing.Point(129, 205);
             this.dateTimePickerProductionDate.Name = "dateTimePickerProductionDate";
             this.dateTimePickerProductionDate.Size = new System.Drawing.Size(200, 25);
             this.dateTimePickerProductionDate.TabIndex = 92;
@@ -744,7 +747,7 @@
             // lblProductionDate
             // 
             this.lblProductionDate.AutoSize = true;
-            this.lblProductionDate.Location = new System.Drawing.Point(6, 231);
+            this.lblProductionDate.Location = new System.Drawing.Point(5, 212);
             this.lblProductionDate.Name = "lblProductionDate";
             this.lblProductionDate.Size = new System.Drawing.Size(121, 15);
             this.lblProductionDate.TabIndex = 91;
@@ -752,7 +755,7 @@
             // 
             // txtBxCartonBoxDCMSerial
             // 
-            this.txtBxCartonBoxDCMSerial.Location = new System.Drawing.Point(801, 188);
+            this.txtBxCartonBoxDCMSerial.Location = new System.Drawing.Point(800, 169);
             this.txtBxCartonBoxDCMSerial.Name = "txtBxCartonBoxDCMSerial";
             this.txtBxCartonBoxDCMSerial.Size = new System.Drawing.Size(121, 25);
             this.txtBxCartonBoxDCMSerial.TabIndex = 90;
@@ -760,7 +763,7 @@
             // lblCartonBxDCMSerial
             // 
             this.lblCartonBxDCMSerial.AutoSize = true;
-            this.lblCartonBxDCMSerial.Location = new System.Drawing.Point(585, 191);
+            this.lblCartonBxDCMSerial.Location = new System.Drawing.Point(585, 172);
             this.lblCartonBxDCMSerial.Name = "lblCartonBxDCMSerial";
             this.lblCartonBxDCMSerial.Size = new System.Drawing.Size(199, 15);
             this.lblCartonBxDCMSerial.TabIndex = 89;
@@ -768,7 +771,7 @@
             // 
             // txtBxGiftBxSerial
             // 
-            this.txtBxGiftBxSerial.Location = new System.Drawing.Point(446, 188);
+            this.txtBxGiftBxSerial.Location = new System.Drawing.Point(445, 169);
             this.txtBxGiftBxSerial.Name = "txtBxGiftBxSerial";
             this.txtBxGiftBxSerial.Size = new System.Drawing.Size(121, 25);
             this.txtBxGiftBxSerial.TabIndex = 88;
@@ -776,7 +779,7 @@
             // lblGiftBoxSerial
             // 
             this.lblGiftBoxSerial.AutoSize = true;
-            this.lblGiftBoxSerial.Location = new System.Drawing.Point(262, 191);
+            this.lblGiftBoxSerial.Location = new System.Drawing.Point(261, 172);
             this.lblGiftBoxSerial.Name = "lblGiftBoxSerial";
             this.lblGiftBoxSerial.Size = new System.Drawing.Size(178, 15);
             this.lblGiftBoxSerial.TabIndex = 87;
@@ -784,7 +787,7 @@
             // 
             // txtBxDCMSerial
             // 
-            this.txtBxDCMSerial.Location = new System.Drawing.Point(131, 188);
+            this.txtBxDCMSerial.Location = new System.Drawing.Point(130, 169);
             this.txtBxDCMSerial.Name = "txtBxDCMSerial";
             this.txtBxDCMSerial.Size = new System.Drawing.Size(121, 25);
             this.txtBxDCMSerial.TabIndex = 86;
@@ -792,7 +795,7 @@
             // lblDCMSerial
             // 
             this.lblDCMSerial.AutoSize = true;
-            this.lblDCMSerial.Location = new System.Drawing.Point(7, 191);
+            this.lblDCMSerial.Location = new System.Drawing.Point(6, 172);
             this.lblDCMSerial.Name = "lblDCMSerial";
             this.lblDCMSerial.Size = new System.Drawing.Size(118, 15);
             this.lblDCMSerial.TabIndex = 85;
@@ -961,9 +964,9 @@
             // grpSerialMatching
             // 
             this.grpSerialMatching.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.grpSerialMatching.Controls.Add(this.button3);
+            this.grpSerialMatching.Controls.Add(this.btnShippingDataReset);
             this.grpSerialMatching.Controls.Add(this.dateTimePicker4);
-            this.grpSerialMatching.Controls.Add(this.button4);
+            this.grpSerialMatching.Controls.Add(this.btnShippingDataInput);
             this.grpSerialMatching.Controls.Add(this.txtBxProductionInputDCMSerialNo);
             this.grpSerialMatching.Controls.Add(this.label15);
             this.grpSerialMatching.Controls.Add(this.lblProductionDataDCMSerialNo);
@@ -975,22 +978,22 @@
             this.grpSerialMatching.Controls.Add(this.lblProductCSserialNo);
             this.grpSerialMatching.Controls.Add(this.cmbProductionDataSelection);
             this.grpSerialMatching.Controls.Add(this.lblProductDataTypeSelection);
-            this.grpSerialMatching.Location = new System.Drawing.Point(219, 469);
+            this.grpSerialMatching.Location = new System.Drawing.Point(219, 394);
             this.grpSerialMatching.Name = "grpSerialMatching";
-            this.grpSerialMatching.Size = new System.Drawing.Size(1149, 178);
+            this.grpSerialMatching.Size = new System.Drawing.Size(1149, 138);
             this.grpSerialMatching.TabIndex = 69;
             this.grpSerialMatching.TabStop = false;
             this.grpSerialMatching.Text = "Production Data 입력";
             // 
-            // button3
+            // btnShippingDataReset
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button3.Location = new System.Drawing.Point(873, 114);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 45);
-            this.button3.TabIndex = 96;
-            this.button3.Text = "출하 Data Reset";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnShippingDataReset.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnShippingDataReset.Location = new System.Drawing.Point(929, 16);
+            this.btnShippingDataReset.Name = "btnShippingDataReset";
+            this.btnShippingDataReset.Size = new System.Drawing.Size(122, 45);
+            this.btnShippingDataReset.TabIndex = 96;
+            this.btnShippingDataReset.Text = "출하 Data Reset";
+            this.btnShippingDataReset.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker4
             // 
@@ -999,15 +1002,15 @@
             this.dateTimePicker4.Size = new System.Drawing.Size(200, 25);
             this.dateTimePicker4.TabIndex = 94;
             // 
-            // button4
+            // btnShippingDataInput
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button4.Location = new System.Drawing.Point(745, 114);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(122, 45);
-            this.button4.TabIndex = 95;
-            this.button4.Text = "출하 Data 입력";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnShippingDataInput.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnShippingDataInput.Location = new System.Drawing.Point(801, 16);
+            this.btnShippingDataInput.Name = "btnShippingDataInput";
+            this.btnShippingDataInput.Size = new System.Drawing.Size(122, 45);
+            this.btnShippingDataInput.TabIndex = 95;
+            this.btnShippingDataInput.Text = "출하 Data 입력";
+            this.btnShippingDataInput.UseVisualStyleBackColor = true;
             // 
             // txtBxProductionInputDCMSerialNo
             // 
@@ -1105,6 +1108,7 @@
             // 
             // grpBoxDataSearch
             // 
+            this.grpBoxDataSearch.Controls.Add(this.label16);
             this.grpBoxDataSearch.Controls.Add(this.dataGridView1);
             this.grpBoxDataSearch.Controls.Add(this.cmbBxSrch);
             this.grpBoxDataSearch.Controls.Add(this.btnSrch);
@@ -1112,12 +1116,23 @@
             this.grpBoxDataSearch.Controls.Add(this.btnAdd);
             this.grpBoxDataSearch.Controls.Add(this.btnDel);
             this.grpBoxDataSearch.Controls.Add(this.btnExcel);
-            this.grpBoxDataSearch.Location = new System.Drawing.Point(219, 669);
+            this.grpBoxDataSearch.Controls.Add(this.label9);
+            this.grpBoxDataSearch.Controls.Add(this.txtBxSrch);
+            this.grpBoxDataSearch.Location = new System.Drawing.Point(219, 555);
             this.grpBoxDataSearch.Name = "grpBoxDataSearch";
             this.grpBoxDataSearch.Size = new System.Drawing.Size(1219, 279);
             this.grpBoxDataSearch.TabIndex = 70;
             this.grpBoxDataSearch.TabStop = false;
             this.grpBoxDataSearch.Text = "Data Search";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(10, 49);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(127, 15);
+            this.label16.TabIndex = 38;
+            this.label16.Text = "Search Category :";
             // 
             // frmSearchAdmin
             // 
@@ -1125,7 +1140,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.PaleGreen;
-            this.ClientSize = new System.Drawing.Size(1900, 927);
+            this.ClientSize = new System.Drawing.Size(1900, 852);
             this.Controls.Add(this.grpBoxDataSearch);
             this.Controls.Add(this.grpSerialMatching);
             this.Controls.Add(this.grpBoxProcessData);
@@ -1140,7 +1155,6 @@
             this.Controls.Add(this.txtBxComp);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.txtBxSrch);
             this.Controls.Add(this.txtBxWWW);
             this.Controls.Add(this.txtBxZipCod);
             this.Controls.Add(this.txtBxState);
@@ -1154,7 +1168,6 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -1177,6 +1190,7 @@
             this.grpSerialMatching.ResumeLayout(false);
             this.grpSerialMatching.PerformLayout();
             this.grpBoxDataSearch.ResumeLayout(false);
+            this.grpBoxDataSearch.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1269,10 +1283,10 @@
         private System.Windows.Forms.Label lblProductCSserialNo;
         private System.Windows.Forms.ComboBox cmbProductionDataSelection;
         private System.Windows.Forms.Label lblProductDataTypeSelection;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnProcessDataReset;
+        private System.Windows.Forms.Button btnProcessDataInput;
+        private System.Windows.Forms.Button btnShippingDataReset;
+        private System.Windows.Forms.Button btnShippingDataInput;
         private System.Windows.Forms.Button btnFail;
         private System.Windows.Forms.Button btnTestPass;
         private System.Windows.Forms.Label lblBurningTime;
@@ -1287,5 +1301,6 @@
         private System.Windows.Forms.Label lblRepairLstTuning;
         private System.Windows.Forms.Label lblRepairLstSoldering;
         private System.Windows.Forms.GroupBox grpBoxDataSearch;
+        private System.Windows.Forms.Label label16;
     }
 }
