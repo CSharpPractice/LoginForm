@@ -78,11 +78,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AddressBookDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="categoAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="categoAdd.Designer.cs">
+      <DependentUpon>categoAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DBConfigurationRead.cs" />
     <Compile Include="employeeSrch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +110,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="categoAdd.resx">
+      <DependentUpon>categoAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="employeeSrch.resx">
       <DependentUpon>employeeSrch.cs</DependentUpon>
     </EmbeddedResource>

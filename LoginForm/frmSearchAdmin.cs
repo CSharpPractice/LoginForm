@@ -39,6 +39,40 @@ namespace LoginForm
         SqlCommandBuilder cmdBuilder;
         SqlConnection conn;
 
+        private string [] GetConfiguration(string selectionCol, string whatConfigData, string connecSelecStr)
+        {
+            string queryCmd = "select " + selectionCol + " from configuration where largeCateg = \'" + whatConfigData + "\';";
+            DataSet ds = new DataSet();
+            try
+            {
+                dataAdapter = new SqlDataAdapter(queryCmd, connecSelecStr);
+                
+                dataAdapter.Fill(ds);
+           
+                //dataGridView1.Columns[0].ReadOnly = true;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            string [] StringArray(DataSet dss)
+            {
+                string[] stringArray = new string[dss.Tables[0].Rows.Count];
+
+
+                for (int col = 0; col < dss.Tables[0].Rows.Count; ++col)
+                {
+                    stringArray[col] = dss.Tables[0].Rows[col][0].ToString();
+                }
+
+
+                return stringArray;
+            }
+
+            return StringArray(ds);
+        }
+
         public void EnableProcessGrpBx(bool enable)
         {
             this.grpBoxProcessData.Enabled = enable;
@@ -83,7 +117,7 @@ namespace LoginForm
             EnableProcessGrpBx(false);
             EnableProductionDataGrpBx(false);
             EnableDataSearchGrpBox(true);
-            this.cmbModel.Items.AddRange(new string[] {"TB-3033C", "TB-3093C", "TB-3103C" });
+            this.cmbModel.Items.AddRange(GetConfiguration("[1stCateg]", "Model", connStringProductManagement));
             this.cmbCategory.Items.AddRange(new string[] { "공정 Data", "Serial Matching", "Data Search"});
          
         }
@@ -134,7 +168,7 @@ namespace LoginForm
         public void grpBox_Shipping_Data()
         {
             this.cmbProductionDataSelection.Items.Clear();
-            this.cmbProductionDataSelection.Items.AddRange(new string[] {"공정 Data","출하 Data"});
+            this.cmbProductionDataSelection.Items.AddRange(GetConfiguration("[1stCateg]", "ProductionDataSelection", connStringProductManagement));
         }
         
         private void btnFail_Click(object sender, EventArgs e)
@@ -274,8 +308,11 @@ namespace LoginForm
             this.lblErrorClassification.Left = lblErrorClassificationXCoordi;
 
             this.cmbErrorCategory.Items.Clear();
-            this.cmbErrorCategory.Items.AddRange(new string[] {"Gain", "VSWR", "etc" });
-           // this.cmbErrorCategory.Visible = true;
+            this.cmbErrorCategory.Items.AddRange(GetConfiguration("[1stCateg]", "Tuning2ndCol", connStringProductManagement));
+
+            this.cmbPathSelection.Items.Clear();
+            this.cmbPathSelection.Items.AddRange(GetConfiguration("[1stCateg]", "Tuning1stCol", connStringProductManagement));
+            // this.cmbErrorCategory.Visible = true;
         }
 
         public void partial_integ_UI()
@@ -287,7 +324,7 @@ namespace LoginForm
             this.lblErrorClassification.Left = this.lblPointOfError.Location.X+20;
 
             this.cmbErrorCategory.Items.Clear();
-            this.cmbErrorCategory.Items.AddRange(new string[] { "etc","RCU 불량", "SAW filter 불량" });
+            this.cmbErrorCategory.Items.AddRange(GetConfiguration("[1stCateg]", "반조립", connStringProductManagement));
             this.lblDetails.Visible = true;
             //this.lblBurningYesNo.Visible = true;
             this.txtBxDetails.Visible = true;
@@ -303,6 +340,9 @@ namespace LoginForm
 
             this.cmbErrorCategory.Left = cmbErrorCategXCoordi;
             this.lblErrorClassification.Left = lblErrorClassificationXCoordi;
+
+            this.cmbErrorCategory.Items.Clear();
+            this.cmbErrorCategory.Items.AddRange(GetConfiguration("[1stCateg]", "table_fail", connStringProductManagement));
 
         }
 
@@ -326,6 +366,17 @@ namespace LoginForm
 
             this.lblTestItem.Top = this.lblBurningYesNo.Location.Y;
             this.cmbTestItems.Top = this.cmbBurningYesNo.Location.Y;
+
+            this.cmbTestItems.Items.Clear();
+            if (ATSICS == 1)
+                this.cmbTestItems.Items.AddRange(GetConfiguration("[1stCateg]", "ATS1", connStringProductManagement));
+            else if (ATSICS == 2)
+                this.cmbTestItems.Items.AddRange(GetConfiguration("[1stCateg]", "ATS2", connStringProductManagement));
+            else if (ATSICS == 3)
+                this.cmbTestItems.Items.AddRange(GetConfiguration("[1stCateg]", "ICS1", connStringProductManagement));
+            else if (ATSICS == 4)
+                this.cmbTestItems.Items.AddRange(GetConfiguration("[1stCateg]", "ICS2", connStringProductManagement));
+
         }
         public void Full_Integ_UI()
         {
@@ -336,6 +387,9 @@ namespace LoginForm
 
             this.lblErrorClassification.Left = lblPointErrorXCoord+20;
             this.cmbErrorCategory.Left = cmbPathSelcXCoord;
+
+            this.cmbErrorCategory.Items.Clear();
+            this.cmbErrorCategory.Items.AddRange(GetConfiguration("[1stCateg]", "완조립", connStringProductManagement));
         }
 
         public void packaing_UI()
@@ -411,25 +465,25 @@ namespace LoginForm
             {
                 subCategory = "ATS1";
                 grpBox_ProcessData_Initial_UI();
-                //ATS_ICS_UI(1);
+               // ATS_ICS_UI(1);
             }
             else if (this.cmbSubCategory.Text == "ATS2")
             {
                 subCategory = "ATS2";
                 grpBox_ProcessData_Initial_UI();
-                //ATS_ICS_UI(2);
+               // ATS_ICS_UI(2);
             }
             else if (this.cmbSubCategory.Text == "ICS1")
             {
                 subCategory = "ICS1";
                 grpBox_ProcessData_Initial_UI();
-                //ATS_ICS_UI(3);
+             //   ATS_ICS_UI(3);
             }
             else if (this.cmbSubCategory.Text == "ICS2")
             {
                 subCategory = "ICS2";
                 grpBox_ProcessData_Initial_UI();
-                //ATS_ICS_UI(4);
+             //   ATS_ICS_UI(4);
             }
             else if (this.cmbSubCategory.Text == "완조립")
             {
@@ -494,6 +548,8 @@ namespace LoginForm
 
             cmbPathSelcXCoord = this.cmbPathSelection.Location.X;
             lblPointErrorXCoord = this.lblPointOfError.Location.X;
+
+            
         }
 
         private void frmLoggedIn_Load(object sender, EventArgs e)
