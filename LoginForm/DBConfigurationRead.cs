@@ -10,9 +10,9 @@ namespace LoginForm
 {
     class DBConfigurationRead
     {
-        private string[] GetConfiguration(string selectionCol, string whatConfigData, string connecSelecStr, SqlDataAdapter dataAdapter)
+        public string[] GetConfiguration(string selectionCol, string whatConfigData, string connecSelecStr, SqlDataAdapter dataAdapter)
         {
-            string queryCmd = "select " + selectionCol + " from configuration where largeCateg = \'" + whatConfigData + "\';";
+            string queryCmd = "select " + selectionCol + " from configuration where largeCateg like \'" + whatConfigData + "\';";
             DataSet ds = new DataSet();
             try
             {

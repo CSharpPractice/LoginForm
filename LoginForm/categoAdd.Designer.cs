@@ -28,56 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lstBxCategoryDisp = new System.Windows.Forms.ListBox();
+            this.cmbCategoryList = new System.Windows.Forms.ComboBox();
+            this.btnAddCatoryData = new System.Windows.Forms.Button();
+            this.txtBxNewCategoryAdd = new System.Windows.Forms.TextBox();
+            this.btnCloseReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lstBxCategoryDisp
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(281, 35);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(288, 139);
-            this.listBox1.TabIndex = 0;
+            this.lstBxCategoryDisp.FormattingEnabled = true;
+            this.lstBxCategoryDisp.ItemHeight = 15;
+            this.lstBxCategoryDisp.Location = new System.Drawing.Point(281, 35);
+            this.lstBxCategoryDisp.Name = "lstBxCategoryDisp";
+            this.lstBxCategoryDisp.Size = new System.Drawing.Size(288, 139);
+            this.lstBxCategoryDisp.TabIndex = 0;
             // 
-            // comboBox1
+            // cmbCategoryList
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(44, 35);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(181, 23);
-            this.comboBox1.TabIndex = 1;
+            this.cmbCategoryList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoryList.FormattingEnabled = true;
+            this.cmbCategoryList.Location = new System.Drawing.Point(44, 35);
+            this.cmbCategoryList.Name = "cmbCategoryList";
+            this.cmbCategoryList.Size = new System.Drawing.Size(181, 23);
+            this.cmbCategoryList.TabIndex = 1;
+            this.cmbCategoryList.SelectionChangeCommitted += new System.EventHandler(this.cmbCategoryList_SelectionChangeCommitted);
             // 
-            // button1
+            // btnAddCatoryData
             // 
-            this.button1.Location = new System.Drawing.Point(150, 90);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddCatoryData.Location = new System.Drawing.Point(150, 90);
+            this.btnAddCatoryData.Name = "btnAddCatoryData";
+            this.btnAddCatoryData.Size = new System.Drawing.Size(75, 23);
+            this.btnAddCatoryData.TabIndex = 2;
+            this.btnAddCatoryData.Text = "Add";
+            this.btnAddCatoryData.UseVisualStyleBackColor = true;
+            this.btnAddCatoryData.Click += new System.EventHandler(this.btnAddCatoryData_Click);
             // 
-            // textBox1
+            // txtBxNewCategoryAdd
             // 
-            this.textBox1.Location = new System.Drawing.Point(44, 88);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 25);
-            this.textBox1.TabIndex = 3;
+            this.txtBxNewCategoryAdd.Location = new System.Drawing.Point(44, 88);
+            this.txtBxNewCategoryAdd.Name = "txtBxNewCategoryAdd";
+            this.txtBxNewCategoryAdd.Size = new System.Drawing.Size(100, 25);
+            this.txtBxNewCategoryAdd.TabIndex = 3;
+            // 
+            // btnCloseReturn
+            // 
+            this.btnCloseReturn.Location = new System.Drawing.Point(494, 242);
+            this.btnCloseReturn.Name = "btnCloseReturn";
+            this.btnCloseReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnCloseReturn.TabIndex = 4;
+            this.btnCloseReturn.Text = "Close";
+            this.btnCloseReturn.UseVisualStyleBackColor = true;
+            this.btnCloseReturn.Click += new System.EventHandler(this.btnCloseReturn_Click);
             // 
             // categoAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 298);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.btnCloseReturn);
+            this.Controls.Add(this.txtBxNewCategoryAdd);
+            this.Controls.Add(this.btnAddCatoryData);
+            this.Controls.Add(this.cmbCategoryList);
+            this.Controls.Add(this.lstBxCategoryDisp);
             this.Name = "categoAdd";
-            this.Text = "categoAdd";
+            this.Text = "Category Configuration";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,9 +100,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListBox lstBxCategoryDisp;
+        private System.Windows.Forms.ComboBox cmbCategoryList;
+        private System.Windows.Forms.Button btnAddCatoryData;
+        private System.Windows.Forms.TextBox txtBxNewCategoryAdd;
+        private System.Windows.Forms.Button btnCloseReturn;
     }
 }

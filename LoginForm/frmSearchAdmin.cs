@@ -378,6 +378,16 @@ namespace LoginForm
                 this.cmbTestItems.Items.AddRange(GetConfiguration("[1stCateg]", "ICS2", connStringProductManagement));
 
         }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            categoAdd addWin = new categoAdd();
+            this.Hide();
+            addWin.ShowDialog();
+            this.Show();
+            
+        }
+
         public void Full_Integ_UI()
         {
             this.cmbErrorCategory.Visible = true;
@@ -586,10 +596,7 @@ namespace LoginForm
 
         private void btnProcessDataInput_Click(object sender, EventArgs e)
         {
-            //SqlCommand cmdObj;
-
             
-
             string insertSolderFail = @"insert into dbo.Soldering_Fail(CSSerialNo, FailedProcedureName, Details)
                                     values (@CSSerialNoP, @FailedProceNameP, @DetailsP)";
 
@@ -979,17 +986,6 @@ namespace LoginForm
 
                 }
 
-
-
-
-                    
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
-                //}
-
-
-                //Data retrieval from the DB
                 if (insertStrDistinction == "수삽")
                 {
                     GetData(selectSoldering, whereToConnect);
@@ -1065,7 +1061,7 @@ namespace LoginForm
                 {
                     conn.Open();
                     cmdObj = new SqlCommand(insert, conn);
-                    cmdObj.Parameters.AddWithValue(@"Date_Added", dateTimePicker1.Value.Date);
+                   /* cmdObj.Parameters.AddWithValue(@"Date_Added", dateTimePicker1.Value.Date);
                     cmdObj.Parameters.AddWithValue(@"Company", txtBxComp.Text);
                     cmdObj.Parameters.AddWithValue(@"Website", txtBxWWW.Text);
                     cmdObj.Parameters.AddWithValue(@"Title", txtBxTitle.Text);
@@ -1082,7 +1078,7 @@ namespace LoginForm
                         cmdObj.Parameters.AddWithValue(@"Image", File.ReadAllBytes(openImageFileDialog.FileName));//Converts images to bytes for saving. 
                     else
                         cmdObj.Parameters.Add(@"Image", SqlDbType.VarBinary).Value = DBNull.Value;
-
+                        */
                     
                     cmdObj.ExecuteNonQuery();
                 }
@@ -1162,13 +1158,13 @@ namespace LoginForm
             }
         }
 
-        private void btnGetImage_Click(object sender, EventArgs e)
+        /*private void btnGetImage_Click(object sender, EventArgs e)
         {
             if(openImageFileDialog.ShowDialog() == DialogResult.OK)
                 pictureBox1.Load(openImageFileDialog.FileName);
-        }
+        }*/
 
-        private void pictureBox1_DoubleClick(object sender, EventArgs e)
+       /* private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
             Form frm = new Form();
             try
@@ -1184,7 +1180,7 @@ namespace LoginForm
             }
             
            
-        }
+        }*/
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
