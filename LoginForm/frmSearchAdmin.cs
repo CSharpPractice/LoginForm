@@ -23,7 +23,7 @@ namespace LoginForm
         string insertCmdProductData = @"insert into dbo.Products(CSSerialNo, Model, PassORFail, ShippingDate) 
                                         values (@CSSerialNoP, @ModelP, @PassORFailP, @ShippingDateP)";
 
-        string selectionStatement = "select * from BizContacts";
+       // string selectionStatement = "select * from BizContacts";
 
         string selectProduct = "select * from Products", selectSoldering = "select * from Soldering_Fail", selectTuning = "select * from Tuning_Fail", selectPartial_Integ = "select * from Partial_Integration_Fail", selectTable = "select * from Table_Fail", selectBurningTime = "select * from Burning_Time", selectATS1 = "select * from ATS1_Fail", selectATS2 = "select * from ATS2_Fail",
                selectICS1 = "select * from ICS1_Fail", selectICS2 = "select * from ICS2_Fail", selectFullInteg = "select * from Full_Integration_Fail";
@@ -559,6 +559,7 @@ namespace LoginForm
             cmbPathSelcXCoord = this.cmbPathSelection.Location.X;
             lblPointErrorXCoord = this.lblPointOfError.Location.X;
 
+
             
         }
 
@@ -567,6 +568,8 @@ namespace LoginForm
             cmbBxSrch.SelectedIndex = 0;
             dataGridView1.DataSource = bindingSource1;
 
+            this.cmbBxSrch.Items.Clear();
+            this.cmbBxSrch.Items.AddRange(GetConfiguration("[1stCateg]", "Search", connStringProductManagement));
             //GetData(selectionStatement);    
          }
 
@@ -1144,16 +1147,21 @@ namespace LoginForm
         private void btnSrch_Click(object sender, EventArgs e)
         {
             switch (cmbBxSrch.SelectedItem.ToString()) {
-                case "First Name":
-                   // GetData("select * from bizcontacts where lower(first_name) like '%" + txtBxSrch.Text.ToLower() + "%'");
+                case "CSSerialNo":
+                    GetData("select [CSSerialNo], [Model], [CSSerial_ModemSerialNo], [CSSerial_AdapterSerialNo], [CSSerial_DCMSerialNo], [PassORFail], [ShippingDate] from Products where lower(CSSerialNo) like '%" + txtBxSrch.Text.ToLower() + "%'", connStringProductManagement);
                     break;
-                case "Last Name":
-                  //  GetData("select * from bizcontacts where lower(last_name) like '%" + txtBxSrch.Text.ToLower() + "%'");
+                case "ModemSerialNo":
+                    GetData( "select [CSSerialNo], [Model], [CSSerial_ModemSerialNo], [CSSerial_AdapterSerialNo], [CSSerial_DCMSerialNo], [PassORFail], [ShippingDate] from Products where lower(CSSerial_ModemSerialNo) like '%" + txtBxSrch.Text.ToLower() + "%'", connStringProductManagement);
                     break;
-                case "Company":
-                  //  GetData("select * from bizcontacts where lower(company) like '%" + txtBxSrch.Text.ToLower() + "%'");
+                case "AdapterSerialNo":
+                    GetData( "select [CSSerialNo], [Model], [CSSerial_ModemSerialNo], [CSSerial_AdapterSerialNo], [CSSerial_DCMSerialNo], [PassORFail], [ShippingDate] from Products where lower(CSSerial_AdapterSerialNo]) like '%" + txtBxSrch.Text.ToLower() + "%'", connStringProductManagement);
                     break;
-
+                case "DCMSerialNo":
+                    GetData( "select [CSSerialNo], [Model], [CSSerial_ModemSerialNo], [CSSerial_AdapterSerialNo], [CSSerial_DCMSerialNo], [PassORFail], [ShippingDate] from Products where lower(CSSerial_DCMSerialNo) like '%" + txtBxSrch.Text.ToLower() + "%'", connStringProductManagement);
+                    break;
+                case "Date":
+                    GetData("select [CSSerialNo], [Model], [CSSerial_ModemSerialNo], [CSSerial_AdapterSerialNo], [CSSerial_DCMSerialNo], [PassORFail], [ShippingDate] from Products where [ShippingDate] between '" + SearchDateBegin.Value.ToShortDateString() + "' and '"+ SearchDateEnd.Value.ToShortDateString() + "';", connStringProductManagement);
+                    break;
 
             }
         }
@@ -1221,9 +1229,6 @@ namespace LoginForm
                 workSheet = null;
                 workBook = null;
             }
-             
         }
-
-       
     }
 }

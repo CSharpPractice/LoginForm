@@ -34,11 +34,8 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cmbBxSrch = new System.Windows.Forms.ComboBox();
             this.btnSrch = new System.Windows.Forms.Button();
-            this.btnEdt = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.openImageFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.btnExcel = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.lblModel = new System.Windows.Forms.Label();
@@ -106,12 +103,18 @@
             this.grpBoxDataSearch = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
             this.btnSetting = new System.Windows.Forms.Button();
+            this.SearchDateBegin = new System.Windows.Forms.DateTimePicker();
+            this.SearchDateEnd = new System.Windows.Forms.DateTimePicker();
+            this.lblSearchDateStart = new System.Windows.Forms.Label();
+            this.lblSearchDateStop = new System.Windows.Forms.Label();
+            this.grpBxSearchByDate = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpBoxProcessData.SuspendLayout();
             this.grpBoxFixRepairList.SuspendLayout();
             this.grpSerialMatching.SuspendLayout();
             this.grpBoxDataSearch.SuspendLayout();
+            this.grpBxSearchByDate.SuspendLayout();
             this.SuspendLayout();
             // 
             // label9
@@ -143,7 +146,7 @@
             "First Name",
             "Last Name",
             "Company"});
-            this.cmbBxSrch.Location = new System.Drawing.Point(143, 45);
+            this.cmbBxSrch.Location = new System.Drawing.Point(143, 48);
             this.cmbBxSrch.Name = "cmbBxSrch";
             this.cmbBxSrch.Size = new System.Drawing.Size(121, 23);
             this.cmbBxSrch.TabIndex = 25;
@@ -151,7 +154,7 @@
             // btnSrch
             // 
             this.btnSrch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSrch.Location = new System.Drawing.Point(514, 46);
+            this.btnSrch.Location = new System.Drawing.Point(918, 49);
             this.btnSrch.Name = "btnSrch";
             this.btnSrch.Size = new System.Drawing.Size(75, 23);
             this.btnSrch.TabIndex = 26;
@@ -159,31 +162,10 @@
             this.btnSrch.UseVisualStyleBackColor = true;
             this.btnSrch.Click += new System.EventHandler(this.btnSrch_Click);
             // 
-            // btnEdt
-            // 
-            this.btnEdt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEdt.Location = new System.Drawing.Point(609, 46);
-            this.btnEdt.Name = "btnEdt";
-            this.btnEdt.Size = new System.Drawing.Size(75, 23);
-            this.btnEdt.TabIndex = 27;
-            this.btnEdt.Text = "Edit";
-            this.btnEdt.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAdd.Location = new System.Drawing.Point(702, 46);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 28;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // btnDel
             // 
             this.btnDel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDel.Location = new System.Drawing.Point(789, 46);
+            this.btnDel.Location = new System.Drawing.Point(999, 49);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 29;
@@ -196,7 +178,7 @@
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 75);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 78);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(1149, 188);
@@ -206,7 +188,7 @@
             // btnExcel
             // 
             this.btnExcel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnExcel.Location = new System.Drawing.Point(874, 46);
+            this.btnExcel.Location = new System.Drawing.Point(1084, 49);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(75, 23);
             this.btnExcel.TabIndex = 37;
@@ -851,19 +833,18 @@
             // 
             // grpBoxDataSearch
             // 
+            this.grpBoxDataSearch.Controls.Add(this.grpBxSearchByDate);
             this.grpBoxDataSearch.Controls.Add(this.label16);
             this.grpBoxDataSearch.Controls.Add(this.dataGridView1);
             this.grpBoxDataSearch.Controls.Add(this.cmbBxSrch);
             this.grpBoxDataSearch.Controls.Add(this.btnSrch);
-            this.grpBoxDataSearch.Controls.Add(this.btnEdt);
-            this.grpBoxDataSearch.Controls.Add(this.btnAdd);
             this.grpBoxDataSearch.Controls.Add(this.btnDel);
             this.grpBoxDataSearch.Controls.Add(this.btnExcel);
             this.grpBoxDataSearch.Controls.Add(this.label9);
             this.grpBoxDataSearch.Controls.Add(this.txtBxSrch);
             this.grpBoxDataSearch.Location = new System.Drawing.Point(219, 555);
             this.grpBoxDataSearch.Name = "grpBoxDataSearch";
-            this.grpBoxDataSearch.Size = new System.Drawing.Size(1219, 279);
+            this.grpBoxDataSearch.Size = new System.Drawing.Size(1219, 285);
             this.grpBoxDataSearch.TabIndex = 70;
             this.grpBoxDataSearch.TabStop = false;
             this.grpBoxDataSearch.Text = "Data Search";
@@ -886,6 +867,54 @@
             this.btnSetting.Text = "Category Config";
             this.btnSetting.UseVisualStyleBackColor = true;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            // 
+            // SearchDateBegin
+            // 
+            this.SearchDateBegin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.SearchDateBegin.Location = new System.Drawing.Point(135, 6);
+            this.SearchDateBegin.Name = "SearchDateBegin";
+            this.SearchDateBegin.Size = new System.Drawing.Size(200, 25);
+            this.SearchDateBegin.TabIndex = 39;
+            // 
+            // SearchDateEnd
+            // 
+            this.SearchDateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.SearchDateEnd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SearchDateEnd.Location = new System.Drawing.Point(135, 41);
+            this.SearchDateEnd.Name = "SearchDateEnd";
+            this.SearchDateEnd.Size = new System.Drawing.Size(200, 25);
+            this.SearchDateEnd.TabIndex = 40;
+            // 
+            // lblSearchDateStart
+            // 
+            this.lblSearchDateStart.AutoSize = true;
+            this.lblSearchDateStart.Location = new System.Drawing.Point(72, 13);
+            this.lblSearchDateStart.Name = "lblSearchDateStart";
+            this.lblSearchDateStart.Size = new System.Drawing.Size(54, 15);
+            this.lblSearchDateStart.TabIndex = 41;
+            this.lblSearchDateStart.Text = "Begin :";
+            // 
+            // lblSearchDateStop
+            // 
+            this.lblSearchDateStop.AutoSize = true;
+            this.lblSearchDateStop.Location = new System.Drawing.Point(72, 44);
+            this.lblSearchDateStop.Name = "lblSearchDateStop";
+            this.lblSearchDateStop.Size = new System.Drawing.Size(42, 15);
+            this.lblSearchDateStop.TabIndex = 42;
+            this.lblSearchDateStop.Text = "End :";
+            // 
+            // grpBxSearchByDate
+            // 
+            this.grpBxSearchByDate.Controls.Add(this.lblSearchDateStop);
+            this.grpBxSearchByDate.Controls.Add(this.lblSearchDateStart);
+            this.grpBxSearchByDate.Controls.Add(this.SearchDateBegin);
+            this.grpBxSearchByDate.Controls.Add(this.SearchDateEnd);
+            this.grpBxSearchByDate.Location = new System.Drawing.Point(518, 8);
+            this.grpBxSearchByDate.Name = "grpBxSearchByDate";
+            this.grpBxSearchByDate.Size = new System.Drawing.Size(334, 64);
+            this.grpBxSearchByDate.TabIndex = 39;
+            this.grpBxSearchByDate.TabStop = false;
+            this.grpBxSearchByDate.Text = "groupBox1";
             // 
             // frmSearchAdmin
             // 
@@ -916,6 +945,8 @@
             this.grpSerialMatching.PerformLayout();
             this.grpBoxDataSearch.ResumeLayout(false);
             this.grpBoxDataSearch.PerformLayout();
+            this.grpBxSearchByDate.ResumeLayout(false);
+            this.grpBxSearchByDate.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -927,11 +958,8 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.ComboBox cmbBxSrch;
         private System.Windows.Forms.Button btnSrch;
-        private System.Windows.Forms.Button btnEdt;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.OpenFileDialog openImageFileDialog;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label lblModel;
@@ -999,5 +1027,10 @@
         private System.Windows.Forms.GroupBox grpBoxDataSearch;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.GroupBox grpBxSearchByDate;
+        private System.Windows.Forms.Label lblSearchDateStop;
+        private System.Windows.Forms.Label lblSearchDateStart;
+        private System.Windows.Forms.DateTimePicker SearchDateBegin;
+        private System.Windows.Forms.DateTimePicker SearchDateEnd;
     }
 }
