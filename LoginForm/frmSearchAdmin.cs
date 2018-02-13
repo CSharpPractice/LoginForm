@@ -73,6 +73,40 @@ namespace LoginForm
             return StringArray(ds);
         }
 
+        private string[] GetSerialNoIntoStringArray(string selectionCol, string whatConfigData, string connecSelecStr)
+        {
+            string queryCmd = "select [" + selectionCol + "] from dbo.Products where CSSerialNo = '" + whatConfigData + "';";
+            DataSet ds = new DataSet();
+            try
+            {
+                dataAdapter = new SqlDataAdapter(queryCmd, connecSelecStr);
+
+                dataAdapter.Fill(ds);
+
+                //dataGridView1.Columns[0].ReadOnly = true;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            string[] StringArray(DataSet dss)
+            {
+                string[] stringArray = new string[dss.Tables[0].Rows.Count];
+
+
+                for (int col = 0; col < dss.Tables[0].Rows.Count; ++col)
+                {
+                    stringArray[col] = dss.Tables[0].Rows[col][0].ToString();
+                }
+
+
+                return stringArray;
+            }
+
+            return StringArray(ds);
+        }
+
         public void EnableProcessGrpBx(bool enable)
         {
             this.grpBoxProcessData.Enabled = enable;
@@ -118,7 +152,7 @@ namespace LoginForm
             EnableProductionDataGrpBx(false);
             EnableDataSearchGrpBox(true);
             this.cmbModel.Items.AddRange(GetConfiguration("[1stCateg]", "Model", connStringProductManagement));
-            this.cmbCategory.Items.AddRange(new string[] { "공정 Data", "Serial Matching", "Data Search"});
+            this.cmbCategory.Items.AddRange(new string[] { "공정 Data", "Serial Matching"});
          
         }
 
@@ -167,8 +201,8 @@ namespace LoginForm
         }
         public void grpBox_Shipping_Data()
         {
-            this.cmbProductionDataSelection.Items.Clear();
-            this.cmbProductionDataSelection.Items.AddRange(GetConfiguration("[1stCateg]", "ProductionDataSelection", connStringProductManagement));
+            //this.cmbProductionDataSelection.Items.Clear();
+            //this.cmbProductionDataSelection.Items.AddRange(GetConfiguration("[1stCateg]", "ProductionDataSelection", connStringProductManagement));
         }
         
         private void btnFail_Click(object sender, EventArgs e)
@@ -388,6 +422,65 @@ namespace LoginForm
             
         }
 
+        private void txtBxCartonBoxDCMSerial_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) {
+                if (String.Compare(this.txtBxDCMSerial.Text.Trim(), this.txtBxGiftBxSerial.Text.Trim()) == 0 && String.Compare(this.txtBxGiftBxSerial.Text.Trim(), this.txtBxCartonBoxDCMSerial.Text.Trim()) == 0)
+                {
+                    MessageBox.Show("세개의 Serial No 가 같습니다.");
+                }
+                else
+                {
+                    MessageBox.Show("DCM Serial No, GiftBox Serial No, Carton Box Serial No 가 다릅니다.");
+                }
+            }
+        }
+
+        private void btnProcessDataReset_Click(object sender, EventArgs e)
+        {
+            grpBox_ProcessData_Initial_UI();
+        }
+
+        private void btnShippingDataReset_Click(object sender, EventArgs e)
+        {
+            ProductionInputDataReset_UI();
+        }
+
+        public void ProductionInputDataReset_UI()
+        {
+            this.txtBxSerialNo.Clear();
+            this.txtBxProductModemSerialNo.Clear();
+            this.txtBxProductAdapterSerialNo.Clear();
+            this.txtBxProductionInputDCMSerialNo.Clear();
+        }
+
+        private void btnShippingDataInput_Click(object sender, EventArgs e)
+        {
+            string serialNoInsert = @"update dbo.Products
+                                      set CSSerial_ModemSerialNo = @ModemSerialP, CSSerial_AdapterSerialNo = @AdapterSerialP, CSSerial_DCMSerialNo = @DCMSerialNoP
+                                      where CSSerialNo = @CSSerialNoP";
+            string readStr = @"select CSSerialNo from Products where CSSerialNo = '" + this.txtBxProductCSSerialNo.Text + "'";
+            string DBreadResult = GetSerialNoIntoStringArray("CSSerialNo", this.txtBxProductCSSerialNo.Text.Trim(), connStringProductManagement)[0];
+            string adapterMatching = "", modemMatching = "", DCMMatching = "";
+
+            if (DBreadResult == "")
+            {
+                MessageBox.Show("CS serial no 가 존재하지 않습니다. 공정에서 CS serial No 를 입력 하세요!");
+            }
+            else 
+            {
+                insertData(connStringProductManagement, serialNoInsert, "SerialUpdate");
+            }
+
+            
+        }
+
+        private void txtBxProductionInputDCMSerialNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnShippingDataInput_Click(this, new EventArgs());
+        }
+
         public void Full_Integ_UI()
         {
             this.cmbErrorCategory.Visible = true;
@@ -505,6 +598,8 @@ namespace LoginForm
             {
                 subCategory = "포장";
                 grpBox_ProcessData_Initial_UI();
+                
+                packaing_UI();
                 //packaing_UI();
             }
             else if (this.cmbSubCategory.Text == "출하")
@@ -536,12 +631,12 @@ namespace LoginForm
                 EnableDataSearchGrpBox(true);
                 grpBox_Shipping_Data();
             }
-            else if (this.cmbCategory.Text == "Data Search")
-            {
-                EnableProcessGrpBx(false);
-                EnableProductionDataGrpBx(false);
-                EnableDataSearchGrpBox(true);
-            }
+            //else if (this.cmbCategory.Text == "Data Search")
+            //{
+            //    EnableProcessGrpBx(false);
+            //    EnableProductionDataGrpBx(false);
+            //    EnableDataSearchGrpBox(true);
+            //}
         }
 
         
@@ -633,6 +728,11 @@ namespace LoginForm
             string insertShippingProduct = @"update dbo.Products
                                        set ShippingDate = @ShippingDateP
                                        where CSSerialNo = @CSSerialNoP";
+
+            
+
+
+
 
 
             if (this.cmbSubCategory.Text == "수삽")
@@ -726,7 +826,8 @@ namespace LoginForm
                 // grpBox_ProcessData_Initial_UI();
                 //grpBoxFix_Repair_UI();
                 //insertData(connStringProductManagement, insertSolderFail, "수리");
-            } 
+            }
+            
 
 
         }
@@ -737,8 +838,6 @@ namespace LoginForm
 
             using (SqlConnection conn = new SqlConnection(whereToConnect))
             {
-
-                
                     if (insertStrDistinction == "수삽")
                     {
                          try
@@ -749,26 +848,10 @@ namespace LoginForm
                              cmdObj.Parameters.AddWithValue(@"FailedProceNameP", this.cmbSubCategory.Text);
                              cmdObj.Parameters.AddWithValue(@"DetailsP", this.txtBxDetails.Text);
                              cmdObj.ExecuteNonQuery();
-                        //cmdObj.Parameters.AddWithValue(@"Date_Added", dateTimePicker1.Value.Date);
-                        //cmdObj.Parameters.AddWithValue(@"Company", txtBxComp.Text);
-                        //cmdObj.Parameters.AddWithValue(@"Website", txtBxWWW.Text);
-                        //cmdObj.Parameters.AddWithValue(@"Title", txtBxTitle.Text);
-                        //cmdObj.Parameters.AddWithValue(@"First_Name", txtBxFstName.Text);
-                        //cmdObj.Parameters.AddWithValue(@"Last_Name", txtBxLstName.Text);
-                        //cmdObj.Parameters.AddWithValue(@"Address", txtBxAddr.Text);
-                        //cmdObj.Parameters.AddWithValue(@"City", txtBxCity.Text);
-                        //cmdObj.Parameters.AddWithValue(@"State", txtBxState.Text);
-                        //cmdObj.Parameters.AddWithValue(@"Postal_Code", txtBxZipCod.Text);
-                        //cmdObj.Parameters.AddWithValue(@"Email", txtBxEmail.Text);
-                        //cmdObj.Parameters.AddWithValue(@"Mobile", txtBxMPhone.Text);
-                        //cmdObj.Parameters.AddWithValue(@"Notes", txtBxNot.Text);
-                        //if (openImageFileDialog.FileName != "")
-                        //    cmdObj.Parameters.AddWithValue(@"Image", File.ReadAllBytes(openImageFileDialog.FileName));//Converts images to bytes for saving. 
-                        //else
-                        //    cmdObj.Parameters.Add(@"Image", SqlDbType.VarBinary).Value = DBNull.Value;
+                        
 
 
-                                     }
+                         }
                         catch (NullReferenceException ex)
                         {
                             Console.WriteLine("Null value was passed : " + ex);
@@ -987,8 +1070,35 @@ namespace LoginForm
                             Console.WriteLine("Null value was passed : " + ex);
                         }
 
-                }
+                    }
+                else if (insertStrDistinction == "SerialUpdate")
+                {
+                    try
+                    {
+                        conn.Open();
+                        cmdObj = new SqlCommand(insertSQLCmd, conn);
+                        cmdObj.Parameters.AddWithValue(@"ModemSerialP", this.txtBxProductionInputDCMSerialNo.Text + "&" +this.txtBxProductModemSerialNo.Text);
+                        cmdObj.Parameters.AddWithValue(@"AdapterSerialP", this.txtBxProductionInputDCMSerialNo.Text + "&"+this.txtBxProductAdapterSerialNo.Text);
+                        cmdObj.Parameters.AddWithValue(@"DCMSerialNoP", this.txtBxProductionInputDCMSerialNo.Text + "&"+this.txtBxProductionInputDCMSerialNo.Text);
+                        cmdObj.Parameters.AddWithValue(@"CSSerialNoP", this.txtBxProductCSSerialNo.Text);
+                        cmdObj.ExecuteNonQuery();
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Unique key constraint error, a column is already there : " + ex);
+                    }
+                    catch (NullReferenceException ex)
+                    {
+                        MessageBox.Show("Null value was passed : " + ex);
+                    }
 
+                }
+                retrieveData();
+                
+                dataGridView1.Update();
+            }
+            void retrieveData()
+            {
                 if (insertStrDistinction == "수삽")
                 {
                     GetData(selectSoldering, whereToConnect);
@@ -1043,8 +1153,10 @@ namespace LoginForm
                     GetData(selectProduct, whereToConnect);
 
                 }
-               
-                dataGridView1.Update();
+                else if (insertStrDistinction == "SerialUpdate")
+                {
+                    GetData(selectProduct, whereToConnect);
+                }
             }
 
         }

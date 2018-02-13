@@ -98,16 +98,14 @@
             this.lblProductionModemSerialNo = new System.Windows.Forms.Label();
             this.txtBxProductCSSerialNo = new System.Windows.Forms.TextBox();
             this.lblProductCSserialNo = new System.Windows.Forms.Label();
-            this.cmbProductionDataSelection = new System.Windows.Forms.ComboBox();
-            this.lblProductDataTypeSelection = new System.Windows.Forms.Label();
             this.grpBoxDataSearch = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.btnSetting = new System.Windows.Forms.Button();
+            this.grpBxSearchByDate = new System.Windows.Forms.GroupBox();
+            this.lblSearchDateStop = new System.Windows.Forms.Label();
+            this.lblSearchDateStart = new System.Windows.Forms.Label();
             this.SearchDateBegin = new System.Windows.Forms.DateTimePicker();
             this.SearchDateEnd = new System.Windows.Forms.DateTimePicker();
-            this.lblSearchDateStart = new System.Windows.Forms.Label();
-            this.lblSearchDateStop = new System.Windows.Forms.Label();
-            this.grpBxSearchByDate = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnSetting = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpBoxProcessData.SuspendLayout();
@@ -131,7 +129,7 @@
             this.txtBxSrch.Location = new System.Drawing.Point(356, 45);
             this.txtBxSrch.Name = "txtBxSrch";
             this.txtBxSrch.Size = new System.Drawing.Size(142, 25);
-            this.txtBxSrch.TabIndex = 23;
+            this.txtBxSrch.TabIndex = 26;
             // 
             // bindingSource1
             // 
@@ -157,7 +155,7 @@
             this.btnSrch.Location = new System.Drawing.Point(918, 49);
             this.btnSrch.Name = "btnSrch";
             this.btnSrch.Size = new System.Drawing.Size(75, 23);
-            this.btnSrch.TabIndex = 26;
+            this.btnSrch.TabIndex = 27;
             this.btnSrch.Text = "Search";
             this.btnSrch.UseVisualStyleBackColor = true;
             this.btnSrch.Click += new System.EventHandler(this.btnSrch_Click);
@@ -168,7 +166,7 @@
             this.btnDel.Location = new System.Drawing.Point(999, 49);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
-            this.btnDel.TabIndex = 29;
+            this.btnDel.TabIndex = 28;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
@@ -191,7 +189,7 @@
             this.btnExcel.Location = new System.Drawing.Point(1084, 49);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(75, 23);
-            this.btnExcel.TabIndex = 37;
+            this.btnExcel.TabIndex = 29;
             this.btnExcel.Text = "Excel";
             this.btnExcel.UseVisualStyleBackColor = true;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
@@ -450,6 +448,7 @@
             this.btnProcessDataReset.TabIndex = 94;
             this.btnProcessDataReset.Text = "공정 Data Reset";
             this.btnProcessDataReset.UseVisualStyleBackColor = true;
+            this.btnProcessDataReset.Click += new System.EventHandler(this.btnProcessDataReset_Click);
             // 
             // btnProcessDataInput
             // 
@@ -483,7 +482,8 @@
             this.txtBxCartonBoxDCMSerial.Location = new System.Drawing.Point(800, 169);
             this.txtBxCartonBoxDCMSerial.Name = "txtBxCartonBoxDCMSerial";
             this.txtBxCartonBoxDCMSerial.Size = new System.Drawing.Size(121, 25);
-            this.txtBxCartonBoxDCMSerial.TabIndex = 90;
+            this.txtBxCartonBoxDCMSerial.TabIndex = 88;
+            this.txtBxCartonBoxDCMSerial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBxCartonBoxDCMSerial_KeyDown);
             // 
             // lblCartonBxDCMSerial
             // 
@@ -499,7 +499,7 @@
             this.txtBxGiftBxSerial.Location = new System.Drawing.Point(445, 169);
             this.txtBxGiftBxSerial.Name = "txtBxGiftBxSerial";
             this.txtBxGiftBxSerial.Size = new System.Drawing.Size(121, 25);
-            this.txtBxGiftBxSerial.TabIndex = 88;
+            this.txtBxGiftBxSerial.TabIndex = 87;
             // 
             // lblGiftBoxSerial
             // 
@@ -701,8 +701,6 @@
             this.grpSerialMatching.Controls.Add(this.lblProductionModemSerialNo);
             this.grpSerialMatching.Controls.Add(this.txtBxProductCSSerialNo);
             this.grpSerialMatching.Controls.Add(this.lblProductCSserialNo);
-            this.grpSerialMatching.Controls.Add(this.cmbProductionDataSelection);
-            this.grpSerialMatching.Controls.Add(this.lblProductDataTypeSelection);
             this.grpSerialMatching.Location = new System.Drawing.Point(219, 394);
             this.grpSerialMatching.Name = "grpSerialMatching";
             this.grpSerialMatching.Size = new System.Drawing.Size(1149, 138);
@@ -716,16 +714,17 @@
             this.btnShippingDataReset.Location = new System.Drawing.Point(929, 16);
             this.btnShippingDataReset.Name = "btnShippingDataReset";
             this.btnShippingDataReset.Size = new System.Drawing.Size(122, 45);
-            this.btnShippingDataReset.TabIndex = 96;
+            this.btnShippingDataReset.TabIndex = 106;
             this.btnShippingDataReset.Text = "출하 Data Reset";
             this.btnShippingDataReset.UseVisualStyleBackColor = true;
+            this.btnShippingDataReset.Click += new System.EventHandler(this.btnShippingDataReset_Click);
             // 
             // dateTimePicker4
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(134, 96);
+            this.dateTimePicker4.Location = new System.Drawing.Point(168, 103);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(200, 25);
-            this.dateTimePicker4.TabIndex = 94;
+            this.dateTimePicker4.TabIndex = 105;
             // 
             // btnShippingDataInput
             // 
@@ -733,21 +732,23 @@
             this.btnShippingDataInput.Location = new System.Drawing.Point(801, 16);
             this.btnShippingDataInput.Name = "btnShippingDataInput";
             this.btnShippingDataInput.Size = new System.Drawing.Size(122, 45);
-            this.btnShippingDataInput.TabIndex = 95;
+            this.btnShippingDataInput.TabIndex = 106;
             this.btnShippingDataInput.Text = "출하 Data 입력";
             this.btnShippingDataInput.UseVisualStyleBackColor = true;
+            this.btnShippingDataInput.Click += new System.EventHandler(this.btnShippingDataInput_Click);
             // 
             // txtBxProductionInputDCMSerialNo
             // 
-            this.txtBxProductionInputDCMSerialNo.Location = new System.Drawing.Point(663, 54);
+            this.txtBxProductionInputDCMSerialNo.Location = new System.Drawing.Point(447, 64);
             this.txtBxProductionInputDCMSerialNo.Name = "txtBxProductionInputDCMSerialNo";
             this.txtBxProductionInputDCMSerialNo.Size = new System.Drawing.Size(121, 25);
-            this.txtBxProductionInputDCMSerialNo.TabIndex = 106;
+            this.txtBxProductionInputDCMSerialNo.TabIndex = 103;
+            this.txtBxProductionInputDCMSerialNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBxProductionInputDCMSerialNo_KeyDown);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(10, 103);
+            this.label15.Location = new System.Drawing.Point(44, 110);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(121, 15);
             this.label15.TabIndex = 93;
@@ -756,7 +757,7 @@
             // lblProductionDataDCMSerialNo
             // 
             this.lblProductionDataDCMSerialNo.AutoSize = true;
-            this.lblProductionDataDCMSerialNo.Location = new System.Drawing.Point(542, 59);
+            this.lblProductionDataDCMSerialNo.Location = new System.Drawing.Point(326, 69);
             this.lblProductionDataDCMSerialNo.Name = "lblProductionDataDCMSerialNo";
             this.lblProductionDataDCMSerialNo.Size = new System.Drawing.Size(118, 15);
             this.lblProductionDataDCMSerialNo.TabIndex = 105;
@@ -764,15 +765,15 @@
             // 
             // txtBxProductAdapterSerialNo
             // 
-            this.txtBxProductAdapterSerialNo.Location = new System.Drawing.Point(386, 56);
+            this.txtBxProductAdapterSerialNo.Location = new System.Drawing.Point(170, 66);
             this.txtBxProductAdapterSerialNo.Name = "txtBxProductAdapterSerialNo";
             this.txtBxProductAdapterSerialNo.Size = new System.Drawing.Size(121, 25);
-            this.txtBxProductAdapterSerialNo.TabIndex = 104;
+            this.txtBxProductAdapterSerialNo.TabIndex = 102;
             // 
             // lblProductAdapterSerialNo
             // 
             this.lblProductAdapterSerialNo.AutoSize = true;
-            this.lblProductAdapterSerialNo.Location = new System.Drawing.Point(245, 59);
+            this.lblProductAdapterSerialNo.Location = new System.Drawing.Point(29, 69);
             this.lblProductAdapterSerialNo.Name = "lblProductAdapterSerialNo";
             this.lblProductAdapterSerialNo.Size = new System.Drawing.Size(135, 15);
             this.lblProductAdapterSerialNo.TabIndex = 103;
@@ -780,15 +781,15 @@
             // 
             // txtBxProductModemSerialNo
             // 
-            this.txtBxProductModemSerialNo.Location = new System.Drawing.Point(663, 16);
+            this.txtBxProductModemSerialNo.Location = new System.Drawing.Point(447, 26);
             this.txtBxProductModemSerialNo.Name = "txtBxProductModemSerialNo";
             this.txtBxProductModemSerialNo.Size = new System.Drawing.Size(121, 25);
-            this.txtBxProductModemSerialNo.TabIndex = 102;
+            this.txtBxProductModemSerialNo.TabIndex = 101;
             // 
             // lblProductionModemSerialNo
             // 
             this.lblProductionModemSerialNo.AutoSize = true;
-            this.lblProductionModemSerialNo.Location = new System.Drawing.Point(526, 21);
+            this.lblProductionModemSerialNo.Location = new System.Drawing.Point(310, 31);
             this.lblProductionModemSerialNo.Name = "lblProductionModemSerialNo";
             this.lblProductionModemSerialNo.Size = new System.Drawing.Size(134, 15);
             this.lblProductionModemSerialNo.TabIndex = 101;
@@ -796,7 +797,7 @@
             // 
             // txtBxProductCSSerialNo
             // 
-            this.txtBxProductCSSerialNo.Location = new System.Drawing.Point(386, 18);
+            this.txtBxProductCSSerialNo.Location = new System.Drawing.Point(170, 28);
             this.txtBxProductCSSerialNo.Name = "txtBxProductCSSerialNo";
             this.txtBxProductCSSerialNo.Size = new System.Drawing.Size(121, 25);
             this.txtBxProductCSSerialNo.TabIndex = 100;
@@ -804,32 +805,11 @@
             // lblProductCSserialNo
             // 
             this.lblProductCSserialNo.AutoSize = true;
-            this.lblProductCSserialNo.Location = new System.Drawing.Point(274, 21);
+            this.lblProductCSserialNo.Location = new System.Drawing.Point(58, 31);
             this.lblProductCSserialNo.Name = "lblProductCSserialNo";
             this.lblProductCSserialNo.Size = new System.Drawing.Size(106, 15);
             this.lblProductCSserialNo.TabIndex = 99;
             this.lblProductCSserialNo.Text = "CS Serial No. :";
-            // 
-            // cmbProductionDataSelection
-            // 
-            this.cmbProductionDataSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbProductionDataSelection.FormattingEnabled = true;
-            this.cmbProductionDataSelection.Items.AddRange(new object[] {
-            "Pass",
-            "Fail"});
-            this.cmbProductionDataSelection.Location = new System.Drawing.Point(133, 18);
-            this.cmbProductionDataSelection.Name = "cmbProductionDataSelection";
-            this.cmbProductionDataSelection.Size = new System.Drawing.Size(121, 23);
-            this.cmbProductionDataSelection.TabIndex = 98;
-            // 
-            // lblProductDataTypeSelection
-            // 
-            this.lblProductDataTypeSelection.AutoSize = true;
-            this.lblProductDataTypeSelection.Location = new System.Drawing.Point(10, 21);
-            this.lblProductDataTypeSelection.Name = "lblProductDataTypeSelection";
-            this.lblProductDataTypeSelection.Size = new System.Drawing.Size(117, 15);
-            this.lblProductDataTypeSelection.TabIndex = 97;
-            this.lblProductDataTypeSelection.Text = "Serial Matching :";
             // 
             // grpBoxDataSearch
             // 
@@ -849,24 +829,36 @@
             this.grpBoxDataSearch.TabStop = false;
             this.grpBoxDataSearch.Text = "Data Search";
             // 
-            // label16
+            // grpBxSearchByDate
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(10, 49);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(127, 15);
-            this.label16.TabIndex = 38;
-            this.label16.Text = "Search Category :";
+            this.grpBxSearchByDate.Controls.Add(this.lblSearchDateStop);
+            this.grpBxSearchByDate.Controls.Add(this.lblSearchDateStart);
+            this.grpBxSearchByDate.Controls.Add(this.SearchDateBegin);
+            this.grpBxSearchByDate.Controls.Add(this.SearchDateEnd);
+            this.grpBxSearchByDate.Location = new System.Drawing.Point(518, 8);
+            this.grpBxSearchByDate.Name = "grpBxSearchByDate";
+            this.grpBxSearchByDate.Size = new System.Drawing.Size(334, 64);
+            this.grpBxSearchByDate.TabIndex = 39;
+            this.grpBxSearchByDate.TabStop = false;
+            this.grpBxSearchByDate.Text = "Search by date";
             // 
-            // btnSetting
+            // lblSearchDateStop
             // 
-            this.btnSetting.Location = new System.Drawing.Point(76, 630);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(121, 46);
-            this.btnSetting.TabIndex = 71;
-            this.btnSetting.Text = "Category Config";
-            this.btnSetting.UseVisualStyleBackColor = true;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            this.lblSearchDateStop.AutoSize = true;
+            this.lblSearchDateStop.Location = new System.Drawing.Point(72, 44);
+            this.lblSearchDateStop.Name = "lblSearchDateStop";
+            this.lblSearchDateStop.Size = new System.Drawing.Size(42, 15);
+            this.lblSearchDateStop.TabIndex = 42;
+            this.lblSearchDateStop.Text = "End :";
+            // 
+            // lblSearchDateStart
+            // 
+            this.lblSearchDateStart.AutoSize = true;
+            this.lblSearchDateStart.Location = new System.Drawing.Point(72, 13);
+            this.lblSearchDateStart.Name = "lblSearchDateStart";
+            this.lblSearchDateStart.Size = new System.Drawing.Size(54, 15);
+            this.lblSearchDateStart.TabIndex = 41;
+            this.lblSearchDateStart.Text = "Begin :";
             // 
             // SearchDateBegin
             // 
@@ -885,36 +877,24 @@
             this.SearchDateEnd.Size = new System.Drawing.Size(200, 25);
             this.SearchDateEnd.TabIndex = 40;
             // 
-            // lblSearchDateStart
+            // label16
             // 
-            this.lblSearchDateStart.AutoSize = true;
-            this.lblSearchDateStart.Location = new System.Drawing.Point(72, 13);
-            this.lblSearchDateStart.Name = "lblSearchDateStart";
-            this.lblSearchDateStart.Size = new System.Drawing.Size(54, 15);
-            this.lblSearchDateStart.TabIndex = 41;
-            this.lblSearchDateStart.Text = "Begin :";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(10, 49);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(127, 15);
+            this.label16.TabIndex = 38;
+            this.label16.Text = "Search Category :";
             // 
-            // lblSearchDateStop
+            // btnSetting
             // 
-            this.lblSearchDateStop.AutoSize = true;
-            this.lblSearchDateStop.Location = new System.Drawing.Point(72, 44);
-            this.lblSearchDateStop.Name = "lblSearchDateStop";
-            this.lblSearchDateStop.Size = new System.Drawing.Size(42, 15);
-            this.lblSearchDateStop.TabIndex = 42;
-            this.lblSearchDateStop.Text = "End :";
-            // 
-            // grpBxSearchByDate
-            // 
-            this.grpBxSearchByDate.Controls.Add(this.lblSearchDateStop);
-            this.grpBxSearchByDate.Controls.Add(this.lblSearchDateStart);
-            this.grpBxSearchByDate.Controls.Add(this.SearchDateBegin);
-            this.grpBxSearchByDate.Controls.Add(this.SearchDateEnd);
-            this.grpBxSearchByDate.Location = new System.Drawing.Point(518, 8);
-            this.grpBxSearchByDate.Name = "grpBxSearchByDate";
-            this.grpBxSearchByDate.Size = new System.Drawing.Size(334, 64);
-            this.grpBxSearchByDate.TabIndex = 39;
-            this.grpBxSearchByDate.TabStop = false;
-            this.grpBxSearchByDate.Text = "groupBox1";
+            this.btnSetting.Location = new System.Drawing.Point(76, 630);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(121, 46);
+            this.btnSetting.TabIndex = 71;
+            this.btnSetting.Text = "Category Config";
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // frmSearchAdmin
             // 
@@ -1005,8 +985,6 @@
         private System.Windows.Forms.Label lblProductionModemSerialNo;
         private System.Windows.Forms.TextBox txtBxProductCSSerialNo;
         private System.Windows.Forms.Label lblProductCSserialNo;
-        private System.Windows.Forms.ComboBox cmbProductionDataSelection;
-        private System.Windows.Forms.Label lblProductDataTypeSelection;
         private System.Windows.Forms.Button btnProcessDataReset;
         private System.Windows.Forms.Button btnProcessDataInput;
         private System.Windows.Forms.Button btnShippingDataReset;

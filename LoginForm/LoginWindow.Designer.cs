@@ -53,6 +53,7 @@
             this.txtBxPW.PasswordChar = '*';
             this.txtBxPW.Size = new System.Drawing.Size(417, 40);
             this.txtBxPW.TabIndex = 1;
+            this.txtBxPW.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBxPW_KeyDown);
             // 
             // btnLogout
             // 

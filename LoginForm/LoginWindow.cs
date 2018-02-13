@@ -58,5 +58,13 @@ namespace LoginForm
         {
             this.Close();
         }
+
+        private void txtBxPW_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(this, new EventArgs());
+            }
+        }
     }
 }
